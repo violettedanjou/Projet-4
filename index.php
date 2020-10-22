@@ -1,6 +1,6 @@
 <?php
 require('model.php');
 
-$req = getBillets();
+$posts = getBillets();
 
 require('view.php');

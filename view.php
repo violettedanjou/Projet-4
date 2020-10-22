@@ -12,26 +12,26 @@
  
         
         <?php
-        while ($donnees = $req->fetch())
+        while ($data = $posts->fetch())
         {
         ?>
         <div class="news">
             <h3>
-                <?php echo htmlspecialchars($donnees['titre']); ?>
-                <em>le <?php echo $donnees['creation_date_fr']; ?></em>
+                <?php echo htmlspecialchars($data['title']); ?>
+                <em>le <?php echo $data['creation_date_fr']; ?></em>
             </h3>
             
             <p>
             <?php
-            echo nl2br(htmlspecialchars($donnees['contenu']));
+            echo nl2br(htmlspecialchars($data['content']));
             ?>
             <br />
-            <em><a href="#">Commentaires</a></em>
+            <em><a href="post.php?id=<?= $data['id'] ?>">Commentaires</a></em>
             </p>
         </div>
         <?php
         }
-        $req->closeCursor();
+        $posts->closeCursor();
         ?>
     </body>
 </html>

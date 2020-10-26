@@ -1,5 +1,8 @@
+<!-- Classe fille pour les commentaires -->
 <?php
-class CommentManager
+require_once("model/Manager.php");
+
+class CommentManager extends Manager
 {
     public function getComments($postId)
     {

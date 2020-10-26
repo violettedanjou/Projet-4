@@ -1,6 +1,8 @@
-<!-- Classe pour les billets -->
+<!-- Classe fille pour les billets -->
 <?php
-class PostManager
+require_once("model/Manager.php");
+
+class PostManager extends Manager // signification : PostManager étend la classe Manager
 {
     public function getPosts()
     {

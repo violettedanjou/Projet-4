@@ -1,5 +1,8 @@
 <!-- Classe fille pour les commentaires -->
 <?php
+
+//namespace VioletteDanjou\Projet4php\Model;
+
 require_once("model/Manager.php");
 
 class CommentManager extends Manager
@@ -24,7 +27,7 @@ class CommentManager extends Manager
 
     private function dbConnect()
     {
-        $db = new PDO('mysql:host=localhost;dbname=TP_commentaires;charset=utf8', 'root', 'root');
+        $db = new PDO('mysql:host=localhost;dbname=TP_commentaires;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         return $db;
     }
 }

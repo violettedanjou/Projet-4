@@ -1,5 +1,7 @@
 <!-- Classe fille pour les billets -->
 <?php
+//namespace VioletteDanjou\Projet4php\Model; // La classe sera dans ce namespace
+
 require_once("model/Manager.php");
 
 class PostManager extends Manager // signification : PostManager étend la classe Manager
@@ -22,10 +24,9 @@ class PostManager extends Manager // signification : PostManager étend la class
         return $post;
     }
 
-
     private function dbConnect()
     {
-        $db = new PDO('mysql:host=localhost;dbname=TP_commentaires;charset=utf8', 'root', 'root');
+        $db = new PDO('mysql:host=localhost;dbname=TP_commentaires;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         return $db;
     }
 }

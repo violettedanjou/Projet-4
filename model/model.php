@@ -37,7 +37,7 @@ function postComment($postId, $author, $comment)
 
 function dbConnect()
 {
-    $db = new PDO('mysql:host=localhost;dbname=TP_commentaires;charset=utf8', 'root', 'root');
+    $db = new PDO('mysql:host=localhost;dbname=TP_commentaires;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     return $db;
 }
 

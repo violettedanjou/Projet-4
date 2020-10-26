@@ -26,16 +26,20 @@ function getComments($postId)
     return $comments;
 }
 
+function postComment($postId, $author, $comment)
+{
+    $db = dbConnect();
+    $comments = $db->prepare('INSERT INTO commentaires(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
+    $affectedLines = $comments->execute(array($postId, $author, $comment));
+
+    return $affectedLines;
+}
+
 function dbConnect()
 {
-    try
-    {
-        $db = new PDO('mysql:host=localhost;dbname=TP_commentaires;charset=utf8', 'root', 'root');
-        return $db;
-    }
-    catch(Exception $e)
-    {
-        die('Erreur : '.$e->getMessage());
-    }
+    $db = new PDO('mysql:host=localhost;dbname=TP_commentaires;charset=utf8', 'root', 'root');
+    return $db;
 }
+
+
 ?>

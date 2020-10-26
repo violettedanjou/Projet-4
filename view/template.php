@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title><?= $title ?></title>
-        <link href="commentaires.css" rel="stylesheet" /> 
+        <link href="public/commentaires.css" rel="stylesheet" /> 
     </head>
         
     <body>

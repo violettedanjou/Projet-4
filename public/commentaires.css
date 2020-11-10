@@ -1,32 +1,3 @@
-h1, h3
-{
-    text-align: center;
-    color: #293561;
-    text-decoration: underline;
-}
-h3
-{
-    background-color: #293561;
-    color: white;
-    font-size: 0.9em;
-    margin-bottom: 0px;
-}
-.news p
-{
-    background-color: #CCCCCC;
-    margin-top: 0px;
-}
-.news
-{
-    width: 70%;
-    margin: auto;
-}
-
-a
-{
-    color: blue;
-    text-decoration: none;
-}
 /* MENU */
 body
 {
@@ -39,6 +10,11 @@ header
     height: auto;
     background-color: #293561;
     color: #ffffff;
+}
+a
+{
+    color: blue;
+    text-decoration: none;
 }
 ul
 {
@@ -79,4 +55,28 @@ li
 #button_deconnexion:hover
 {
     text-decoration: underline;
+}
+/* Mise en forme des billets */
+h1, h3
+{
+    text-align: center;
+    color: #293561;
+    text-decoration: underline;
+}
+h3
+{
+    background-color: #293561;
+    color: white;
+    font-size: 0.9em;
+    margin-bottom: 0px;
+}
+.news p
+{
+    background-color: #CCCCCC;
+    margin-top: 0px;
+}
+.news
+{
+    width: 70%;
+    margin: auto;
 }

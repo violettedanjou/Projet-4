@@ -37,5 +37,23 @@ class PostCommentManager extends Manager
         $affectedLines = $comments->execute(array($postId, $author, $comment));
 
         return $affectedLines;
-    }    
+    } 
+    
+	public function insertMember($pseudo, $pass, $email) // inscription
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('INSERT INTO membres(pseudo, pass, email, date_inscription) VALUES(:pseudo, :pass, :email, CURDATE())');
+		$req->execute(array(
+	    	'pseudo' => $pseudo,
+	    	'pass' => password_hash($pass, PASSWORD_DEFAULT),
+	    	'email' => $email));
+	}
+	public function verifyPseudo($pseudo) // Vérification du pseudo existant
+	{
+		$db = $this->dbConnect();
+		$requete = "SELECT pseudo FROM membres WHERE pseudo = '" . $pseudo . "'";
+		$req = $db->query($requete); 
+		$req->execute();
+		return $req;
+	}	      
 }

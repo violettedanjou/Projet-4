@@ -1,24 +1,22 @@
 <?php
 
 // Chargement des classes
-require_once('model/PostManager.php'); // require_once permet de ne pas charger deux fois la classe
-require_once('model/CommentManager.php');
+require_once('model/PostCommentManager.php'); // require_once permet de ne pas charger deux fois la classe
+//require_once('model/CommentManager.php');
 
 function insert()
 {
-	$MbManager = new MemberManager();
-	$pseudoExist = $MbManager->verifyPseudo($_POST['pseudo']);
+	$PCManager = new PostCommentManager();
+	$pseudoExist = $PCManager->verifyPseudo($_POST['pseudo']);
 	$nbrResult = $pseudoExist->rowCount();
 	if ($nbrResult == 0) {
 		echo "Le pseudo n'est pas encore utilisé.";
-	    $MbManager = new MemberManager();
-	    $newMember = $MbManager->insertMember($_POST['pseudo'], $_POST['pass'], $_POST['email']);		
+	    $PCManager = new PostCommentManager();
+	    $newMember = $PCManager->insertMember($_POST['pseudo'], $_POST['pass'], $_POST['email']);		
 	}
 	else {
 		echo "Le pseudo est déjà utilisé. Essayez autre chose.";
 	}
-
-	require('inscriptionView.php');
 }
 
 function listPosts()

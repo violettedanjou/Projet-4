@@ -25,4 +25,58 @@ h3
 a
 {
     color: blue;
+    text-decoration: none;
+}
+/* MENU */
+body
+{
+    margin: 0px;
+}
+header
+{
+    display: flex;
+    margin: 0px;
+    height: auto;
+    background-color: #293561;
+    color: #ffffff;
+}
+ul
+{
+    margin-left: 900px;
+    padding-left: 0;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+li
+{
+    margin-left: 20px;
+    color: red;
+}
+.li a
+{
+    color: #ffffff;
+}
+#button_inscription
+{
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#button_inscription:hover
+{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+#button_connexion:hover
+{
+    text-decoration: underline;
+}
+#button_deconnexion:hover
+{
+    text-decoration: underline;
 }

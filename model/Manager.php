@@ -1,6 +1,6 @@
 <!-- Classe parente pour la classe PostManager et CommentManager (héritage)-->
 <?php
-//namespace VioletteDanjou\Projet4php\Model;
+//namespace Applications\MAMP\htdocs\Test_TP\TP_commentaires\Model;
 
 class Manager
 {

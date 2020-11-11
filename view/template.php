@@ -8,6 +8,10 @@
         
     <body>
         <header>
+	    	<div>
+				<img id="logo" src="public/logoBlog.png" alt="Logo du blog"/>
+			</div>
+			 	
 			<nav>
 				<ul>
 					<li class="li" id="button_inscription"><a href="index.php?action=inscriptionForm">Créer un compte </a></li>

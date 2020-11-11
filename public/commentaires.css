@@ -16,9 +16,15 @@ a
     color: blue;
     text-decoration: none;
 }
+img
+{
+    width: 20%;
+    height: 80%;
+    margin: 10px;
+}
 ul
 {
-    margin-left: 900px;
+    margin-left: 150px;
     padding-left: 0;
     padding-right: 10px;
     display: flex;
@@ -29,7 +35,7 @@ ul
 li
 {
     margin-left: 20px;
-    color: red;
+    color: blue;
 }
 .li a
 {

@@ -21,7 +21,7 @@ function insert()
 
 function listPosts()
 {
-    $postManager = new PostManager(); // Création d'un objet
+    $postManager = new PostCommentManager(); // Création d'un objet
     $posts = $postManager->getPosts(); // Appel d'une fonction, getPosts(), dans cet objet
 
     require('view/listPostsView.php');
@@ -29,8 +29,8 @@ function listPosts()
 
 function post()
 {
-    $postManager = new PostManager();
-    $commentManager = new CommentManager();
+    $postManager = new PostCommentManager();
+    $commentManager = new PostCommentManager();
 
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
@@ -40,7 +40,7 @@ function post()
 
 function addComment($postId, $author, $comment)
 {
-    $commentManager = new CommentManager();
+    $commentManager = new PostCommentManager();
 
     $affectedLines = $commentManager->postComment($postId, $author, $comment);
 

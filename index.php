@@ -38,9 +38,9 @@ try {
         }
 
         if ($_GET['action'] == 'listPosts') {
-            listPosts();
+            listPosts(); //affiche la listes des billets
         }
-        elseif ($_GET['action'] == 'post') {
+        elseif ($_GET['action'] == 'post') { // afficher un billet 
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 post();
             }
@@ -48,7 +48,7 @@ try {
                 throw new Exception("Aucun identifiant de billet envoyé");
             }
         }
-        elseif ($_GET['action'] == 'addComment') {
+        elseif ($_GET['action'] == 'addComment') { // ajouter un commentaire
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_POST['author']) && !empty($_POST['comment'])) {
                     addComment($_GET['id'], $_POST['author'], $_POST['comment']);

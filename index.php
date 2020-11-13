@@ -3,22 +3,18 @@ require('controller/controller.php');
 
 try {
     if (isset($_GET['action'])) {
-        if ($_GET['action'] == 'inscriptionForm') {
+        if ($_GET['action'] == 'inscriptionForm') { // on affiche le formulaire
             afficheInscription();        
         }
-        elseif ($_GET['action'] == 'validInscription') {
+        elseif ($_GET['action'] == 'validInscription') { // on traite le formulaire 
             if ((isset($_POST['pseudo']) AND (strlen($_POST['pseudo']) != 0))) {
-                //echo "Pseudo présent. ";
 
                 if ((isset($_POST['pass']) == isset($_POST['pass_confirm']))) {
-                    //echo "Mots de passes identiques. ";
 
                     if ((isset($_POST['email']))) {
                         $_POST['email'] = htmlspecialchars($_POST['email']);
                 
                         if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['email'])) {
-                            //echo 'L\'adresse ' . $_POST['email'] . ' est <strong>valide</strong> ! ';
-
                             insert();
                         }
                         else {

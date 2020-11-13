@@ -4,7 +4,7 @@ ob_start(); ?>
 
 <h1>Inscription</h1>
 
-<form action="index.php?action=inscriptionForm" method="post">
+<form action="index.php?action=validInscription" method="post">
 	<label for="pseudo">Pseudo :</label><input type="text" name="pseudo" required /><br/>
 	<label for="pass">Mot de passe :</label><input type="password" name="pass" required /><br/>
 	<label for="pass_confirm">Confirmation du mot de passe :</label><input type="password" name="pass_confirm" required /><br/>

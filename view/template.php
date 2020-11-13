@@ -17,12 +17,11 @@
 			<nav>
 				<ul>
 					<li class="li" id="button_inscription"><a href="index.php?action=inscriptionForm">Créer un compte </a></li>
-					<li class="li" id="button_connexion"><a href="#connexion">Connexion</a></li>
+					<li class="li" id="button_connexion"><a href="index.php?action=pageConnection">Connexion</a></li>
 					<li class="li" id="button_deconnexion"><a href="#deconnexion">Déconnexion</a></li>
 				</ul>
 			</nav>
-		</div>
-	</header>
-	<?= $content ?>
+		</header>
+		<?= $content ?>
     </body>
 </html>

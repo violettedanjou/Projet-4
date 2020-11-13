@@ -10,13 +10,18 @@ function insert()
 	$pseudoExist = $PCManager->verifyPseudo($_POST['pseudo']);
 	$nbrResult = $pseudoExist->rowCount();
 	if ($nbrResult == 0) {
-		echo "Le pseudo n'est pas encore utilisé.";
+		//echo "Le pseudo n'est pas encore utilisé.";
 	    $PCManager = new PostCommentManager();
-	    $newMember = $PCManager->insertMember($_POST['pseudo'], $_POST['pass'], $_POST['email']);		
+	    $newMember = $PCManager->insertMember($_POST['pseudo'], $_POST['pass'], $_POST['email']);
+	    header('Location: index.php');	
 	}
 	else {
 		echo "Le pseudo est déjà utilisé. Essayez autre chose.";
 	}
+}
+function afficheInscription()
+{
+	require('view/inscriptionView.php');
 }
 
 function listPosts()

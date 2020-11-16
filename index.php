@@ -1,9 +1,15 @@
 <?php
 require('controller/controller.php');
+session_start();
+if (isset($_SESSION['pseudo'])) {
+    echo "Bonjour " . $_SESSION['pseudo'];
+}
 
 try {
     if (isset($_GET['action'])) {
-        if ($_GET['action'] == 'inscriptionForm') { // on affiche le formulaire
+
+// PAGE INSCRIPTION
+        if ($_GET['action'] == 'afficheInscription') { // on affiche le formulaire
             afficheInscription();        
         }
         elseif ($_GET['action'] == 'validInscription') { // on traite le formulaire 
@@ -33,6 +39,22 @@ try {
                 throw new Exception("Veuillez saisir un pseudo. "); 
             }
         }
+
+// PAGE CONNEXION
+        if ($_GET['action'] == 'validConnection') {
+
+            if (isset($_POST['pseudo']) AND isset($_POST['pass'])) {
+                connect(); // mdp ok avec mdp de la bdd donc on appelle fonction connect()
+            }
+            else {
+                throw new Exception("Veuillez entrer votre pseudo.", 1);
+            }   
+        }
+        elseif ($_GET['action'] == 'afficheConnection') {
+            afficheConnection();
+        }
+
+// LISTE DES BILLETS 
         elseif ($_GET['action'] == 'listPosts') {
             listPosts(); //affiche la listes des billets
         }

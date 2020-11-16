@@ -4,6 +4,12 @@
 require_once('model/PostCommentManager.php'); // require_once permet de ne pas charger deux fois la classe
 //require_once('model/CommentManager.php');
 
+
+// PAGE INSCRIPTION
+function afficheInscription()
+{
+	require('view/inscriptionView.php');
+}
 function insert()
 {
 	$PCManager = new PostCommentManager();
@@ -19,11 +25,35 @@ function insert()
 		echo "Le pseudo est déjà utilisé. Essayez autre chose.";
 	}
 }
-function afficheInscription()
+
+//PAGE CONNEXION
+function afficheConnection()
 {
-	require('view/inscriptionView.php');
+	require('view/connectionView.php');
+}
+function connect()
+{
+    $PCManager = new PostCommentManager();
+    $connect = $PCManager->connectMember($_POST['pseudo']);
+    $nbrResult = $connect->rowCount();
+    if ($nbrResult == 1) {
+    	$user = $connect->fetch();
+    	$pass_hache = $user['pass'];
+    	if (password_verify($_POST['pass'], $pass_hache)) {
+        	$_SESSION['pseudo'] = $_POST['pseudo'];
+       		header('Location: index.php');
+    	}
+    	else {
+    		throw new Exception("Mauvais mot de passe. Veuillez réessayer.", 1);
+    	}
+    }
+    else {
+    	throw new Exception("L'utilisateur n'existe pas.", 1);	
+    }
+    header('Location: index.php');
 }
 
+// LISTE DES BILLETS
 function listPosts()
 {
     $postManager = new PostCommentManager(); // Création d'un objet
@@ -31,7 +61,7 @@ function listPosts()
 
     require('view/listPostsView.php');
 }
-
+// 1 BILLET EN PARTICULIER 
 function post()
 {
     $postManager = new PostCommentManager();
@@ -43,6 +73,7 @@ function post()
     require('view/postView.php');
 }
 
+// AJOUT DE COMMENTAIRE(S)
 function addComment($postId, $author, $comment)
 {
     $commentManager = new PostCommentManager();

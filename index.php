@@ -53,7 +53,12 @@ try {
         elseif ($_GET['action'] == 'afficheConnection') {
             afficheConnection();
         }
-
+// PAGE DECONNEXION 
+        // PAGE DECONNEXION 
+        if ($_GET['action'] == 'validDeconnexion') {
+            disconnection();    
+        }
+        
 // LISTE DES BILLETS 
         elseif ($_GET['action'] == 'listPosts') {
             listPosts(); //affiche la listes des billets

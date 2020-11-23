@@ -53,6 +53,14 @@ function connect()
     header('Location: index.php');
 }
 
+//PAGE DECONNEXION
+function disconnection() // Suppression des variables de session et de la session
+{
+	$_SESSION = array(); 
+	session_destroy();
+	header('Location: index.php');
+}
+
 // LISTE DES BILLETS
 function listPosts()
 {

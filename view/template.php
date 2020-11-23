@@ -16,9 +16,19 @@
 			 	
 			<nav>
 				<ul>
-					<li class="li" id="button_inscription"><a href="index.php?action=afficheInscription">Créer un compte </a></li>
-					<li class="li" id="button_connexion"><a href="index.php?action=afficheConnection">Connexion</a></li>
-					<li class="li" id="button_deconnexion"><a href="#deconnexion">Déconnexion</a></li>
+					<?php 
+					if(isset($_SESSION['pseudo'])) {
+					?>	
+					<li class="li" id="button_deconnexion"><a href="index.php?action=validDeconnexion">Déconnexion</a></li>
+					<?php 
+					 
+					}
+					else {
+					?> 
+						<li class="li" id="button_inscription"><a href="index.php?action=afficheInscription">Créer un compte </a></li>
+						<li class="li" id="button_connexion"><a href="index.php?action=afficheConnection">Connexion</a></li>
+						<?php
+					}?>
 				</ul>
 			</nav>
 		</header>

@@ -13,6 +13,8 @@
     
     <p>
         <?= nl2br(htmlspecialchars($post['content'])) ?>
+        <a href="edition.php?edit=<?= $post['id'] ?>">Modifier</a> /
+   		<a href="delete.php?id=<?= $post['id'] ?>">Supprimer</a>
     </p>
 </div>
 

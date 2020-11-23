@@ -27,6 +27,8 @@
 					?> 
 						<li class="li" id="button_inscription"><a href="index.php?action=afficheInscription">Créer un compte </a></li>
 						<li class="li" id="button_connexion"><a href="index.php?action=afficheConnection">Connexion</a></li>
+						<li class="li" id="button_admin"><a href="index.php?action=afficheAdmin">Administrateur</a></li>
+
 						<?php
 					}?>
 				</ul>

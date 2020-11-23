@@ -95,3 +95,24 @@ function addComment($postId, $author, $comment)
         header('Location: index.php?action=post&id=' . $postId);
     }
 }
+
+// ADMIN
+function afficheAdmin()
+{
+	require('view/adminView.php');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

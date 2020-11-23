@@ -62,7 +62,7 @@ li
 {
     text-decoration: underline;
 }
-#button_deconnexion:hover
+#button_deconnexion:hover, #button_admin:hover
 {
     text-decoration: underline;
 }

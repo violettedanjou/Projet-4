@@ -84,6 +84,12 @@ try {
                 throw new Exception("Aucun identifiant de billet envoyé");
             }
         }
+
+// ADMIN
+        if ($_GET['action'] == 'afficheAdmin') {
+            afficheAdmin();
+        }
+
     }
     else {
         listPosts();

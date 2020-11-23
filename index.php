@@ -58,7 +58,7 @@ try {
         if ($_GET['action'] == 'validDeconnexion') {
             disconnection();    
         }
-        
+
 // LISTE DES BILLETS 
         elseif ($_GET['action'] == 'listPosts') {
             listPosts(); //affiche la listes des billets
@@ -73,7 +73,7 @@ try {
         }
         elseif ($_GET['action'] == 'addComment') { // ajouter un commentaire
             if (isset($_GET['id']) && $_GET['id'] > 0) {
-                if (!empty($_POST['author']) && !empty($_POST['comment'])) {
+                if (!empty($_POST['author']) && !empty($_POST['comment'])) { // vérification des variables POST pour savoir si elles ne sont pas vides
                     addComment($_GET['id'], $_POST['author'], $_POST['comment']);
                 }
                 else {

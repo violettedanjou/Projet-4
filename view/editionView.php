@@ -1,13 +1,15 @@
-<?php $title = "Modification de billet"; 
+<?php $title = "Édition"; 
 
 ob_start(); ?>
 
-<h1>Modification</h1>
-	
+<h1>Édition</h1>
+	<a href="index.php?action=afficheAdmin">
+		<p>Retour</p>
+	</a>
 
 	<form action="index.php?action=validEdition" method="POST" >
-      <input type="text" name="postTitle" placeholder="Titre du billet"/> <br />
-      <textarea name="article_contenu" placeholder="Contenu du billet..."></textarea> <br />
+      <input type="text" name="postTitle" placeholder="Titre du billet"/><br/><br/>
+      <textarea name="article_contenu" placeholder="Contenu du billet..."></textarea><br/>
       <input type="submit" value="Enregistrer le billet" />
     </form>
 

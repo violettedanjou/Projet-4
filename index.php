@@ -89,18 +89,15 @@ try {
         if ($_GET['action'] == 'afficheAdmin') {
             afficheAdmin();
         }
-        /*if ($_GET['action'] == 'afficheEdition') {
-            afficheEdition();
-        }*/
 
         if ($_GET['action'] == 'validEdition') {
 
-            /*if (isset($_POST['pseudo']) AND isset($_POST['pass'])) {
-                connect(); // mdp ok avec mdp de la bdd donc on appelle fonction connect()
+            if (isset($_POST['title']) AND isset($_POST['content'])) {
+                addPost();
             }
             else {
-                throw new Exception("Veuillez entrer votre pseudo.", 1);
-            }*/ 
+                throw new Exception("Veuillez ajouter un nouveau billet.", 1);
+            } 
         }
         elseif ($_GET['action'] == 'afficheEdition') {
             afficheEdition();

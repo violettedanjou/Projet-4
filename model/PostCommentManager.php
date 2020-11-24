@@ -65,13 +65,13 @@ class PostCommentManager extends Manager
         return $affectedLines;
     } 
     
-    public function editPost($postId)
+    public function addNewPost()
     {
-        $db = $this->dbConnect();
-        $edit_post = $bdd->prepare('SELECT * FROM billets WHERE id = ?');
-        $edit_post->execute(array($postId));
+       $db = $this->dbConnect();
+       $newPost = $db->prepare('INSERT INTO billets(id, title, content, creation_date) VALUES (?, ?, ?, NOW())');
+       $addNewPost = $newPost->execute(array());
 
-        return $edit_post;
+       return $addNewPost;
     }
 
 

@@ -96,20 +96,25 @@ function addComment($postId, $author, $comment)
     }
 }
 
-// ADMIN
-function afficheAdmin()
+// PAGE ADMINISTRATEUR
+function afficheAdmin() // Afficher la page d'administrateur
 {
 	$postManager = new PostCommentManager(); 
     $posts = $postManager->getPosts();
 
     require('view/adminView.php');
 }
-
-function afficheEdition()
+function afficheEdition() // Afficher formulaire pour ajout de nouveau billet 
 {
 	require('view/editionView.php');
 }
+function addPost() // Ajouter un nouveau billet
+{
+	$newPostManager = new PostCommentManager();
+	$newPost = $newPostManager->addNewPost();
 
+	require('view/listPostsView.php');
+}
 
 
 

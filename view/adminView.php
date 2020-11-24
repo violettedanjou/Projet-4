@@ -3,7 +3,7 @@
 ob_start(); ?>
 
 <h1>Administration</h1>
-<a href="index.php?action=addition&amp;id=<?= $post['id'] ?>">Ajouter</a> /
+<em><a href="index.php?action=addition&amp;id=<?= $post['id'] ?>">Ajouter</a></em>
 
 
 <?php
@@ -19,9 +19,8 @@ while ($data = $posts->fetch())
         <p>
             <?= nl2br(htmlspecialchars($data['content'])) ?>
             <br />
-            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
-            <a href="index.php?edit<?= $post['id'] ?>">Modifier</a> /
-			<a href="index.php?action=delete&amp;id=<?= $post['id'] ?>">Supprimer</a>
+            <em><a href="index.php?edit<?= $post['id'] ?>">Modifier</a></em> /
+			<em><a href="index.php?action=delete&amp;id=<?= $post['id'] ?>">Supprimer</a></em>
         </p>
     </div>
 <?php

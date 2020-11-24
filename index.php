@@ -89,6 +89,23 @@ try {
         if ($_GET['action'] == 'afficheAdmin') {
             afficheAdmin();
         }
+       /*if ($_GET['action'] == 'validEdition') {
+            if ($_GET['action'] == 'edit') {        //modifier un billet
+               edit();
+
+               /*if (isset($_GET['edit']) AND !empty($_GET['edit'])) {
+                   edit();
+               }
+            }
+        }*/
+
+
+
+
+
+
+
+        
 
     }
     else {
@@ -98,3 +115,13 @@ try {
 catch(Exception $e){
     echo "Erreur : " . $e->getMessage();
 }
+
+
+
+
+
+
+
+
+
+

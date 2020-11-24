@@ -4,7 +4,6 @@
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
 <p>Derniers billets du blog : <br/>
-    <a href="index.php?edit=<?= $a['id'] ?>">Ajouter</a>
 </p>
 
 

@@ -65,5 +65,23 @@ class PostCommentManager extends Manager
         return $affectedLines;
     } 
     
+    public function editPost($postId)
+    {
+        $db = $this->dbConnect();
+        $edit_post = $bdd->prepare('SELECT * FROM billets WHERE id = ?');
+        $edit_post->execute(array($postId));
+
+        return $edit_post;
+    }
+
+
+
+
+
+
+
+
+
+
 
 }

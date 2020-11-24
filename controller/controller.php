@@ -99,8 +99,33 @@ function addComment($postId, $author, $comment)
 // ADMIN
 function afficheAdmin()
 {
-	require('view/adminView.php');
+	$postManager = new PostCommentManager(); 
+    $posts = $postManager->getPosts();
+
+    require('view/adminView.php');
 }
+
+/*
+function edit()
+{
+	$editManager = new PostCommentManager();
+	$edit = $editManager->editPost($_GET['id']);
+	$nbrResult = $edit->rowCount();
+	if($nbrResult == 1) {
+        $edit_post = $edit->fetch();
+    } 
+    else {
+        throw new Exception("Le billet n'existe pas", 1);
+    }
+
+	require('editionView.php');
+}
+*/
+
+
+
+
+
 
 
 

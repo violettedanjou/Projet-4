@@ -8,8 +8,8 @@ ob_start(); ?>
 	</a>
 
 	<form action="index.php?action=validEdition" method="POST" >
-      <input type="text" name="postTitle" placeholder="Titre du billet"/><br/><br/>
-      <textarea name="article_contenu" placeholder="Contenu du billet..."></textarea><br/>
+      <input type="text" name="title" placeholder="Titre du billet"/><br/><br/>
+      <textarea name="content" placeholder="Contenu du billet..."></textarea><br/>
       <input type="submit" value="Enregistrer le billet" />
     </form>
 

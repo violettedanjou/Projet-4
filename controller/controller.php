@@ -111,9 +111,9 @@ function afficheEdition() // Afficher formulaire pour ajout de nouveau billet
 function addPost() // Ajouter un nouveau billet
 {
 	$newPostManager = new PostCommentManager();
-	$newPost = $newPostManager->addNewPost();
+	$newPost = $newPostManager->addNewPost($_POST['title'], $_POST['content']);
 
-	require('view/listPostsView.php');
+	header('Location: index.php?action=afficheAdmin');
 }
 
 

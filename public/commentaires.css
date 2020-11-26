@@ -9,7 +9,10 @@ body
 }
 header
 {
+
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     top: 0;
     right: 0;
     left: 0;
@@ -28,8 +31,8 @@ a:hover
 }
 img
 {
-    width: 20%;
-    height: 80%;
+    width: 150px;
+    height: auto;
     margin: 10px;
 }
 img:hover
@@ -38,12 +41,12 @@ img:hover
 }
 ul
 {
-    margin-left: 150px;
-    padding-left: 0;
-    padding-right: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 20px;
+    padding-left: 0;
+    padding-right: 10px;
     list-style-type: none;
 }
 li
@@ -98,11 +101,19 @@ h3
 {
     background-color: #CCCCCC;
     margin-top: 0px;
+    padding: 10px;
+    height: 30px;
 }
 .news
 {
     width: 70%;
     margin: auto;
+}
+#link-comments a
+{
+    float: right;
+    color: #f08080;
+    font-weight: bold;
 }
 /* Mise en forme commentaires */
 #btn_return_listPosts a

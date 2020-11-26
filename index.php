@@ -110,11 +110,11 @@ try {
             else {
                 throw new Exception("Aucun identifiant de billet envoyé.", 1);
             } 
-        }/*
-        elseif ($_GET['action'] == 'afficheEdition') {
-            afficheEdition();
-        }*/
-
+        }
+        // Supprimer un billet
+        elseif ($_GET['action'] == 'validDelete') {
+            delete();
+        }
 
 
 

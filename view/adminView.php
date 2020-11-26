@@ -24,7 +24,7 @@ while ($data = $posts->fetch())
         <p>
             <?= nl2br(htmlspecialchars($data['content'])) ?> <br/>
             <em><a href="index.php?action=validEdition&amp;id=<?= $data['id'] ?>">Modifier</a></em> /
-			<em><a href="index.php?action=delete&amp;id=<?= $post['id'] ?>">Supprimer</a></em>
+			<em><a href="index.php?action=validDelete>">Supprimer</a></em>
         </p>
     </div>
 <?php

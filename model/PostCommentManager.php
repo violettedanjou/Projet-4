@@ -91,11 +91,13 @@ class PostCommentManager extends Manager
 
         return $editPost;
     }
+    public function deletePost()
+    {
+        $db = $this->dbConnect();
+        $delete = $db->prepare('DELETE FROM billets WHERE id = ?');
+        $delete->execute(array($postId));
 
-
-
-
-
-
+        return $delete;
+    }
 
 }

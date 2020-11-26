@@ -115,7 +115,7 @@ function addPost() // Ajouter un nouveau billet
 
 	header('Location: index.php?action=afficheAdmin');
 }
-function editPosts()
+function editPosts() // Modifier un billet
 {
 	
 	$editManager = new PostCommentManager();
@@ -123,7 +123,13 @@ function editPosts()
 
     require('view/editionView.php');
 }
+function delete()
+{
+	$deleteManager = new PostCommentManager();
+    $delete = $deleteManager->deletePost();
 
+	header('Location: index.php?action=afficheAdmin');
+}
 
 
 

@@ -3,7 +3,7 @@
 
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
-<p>Derniers billets du blog : <br/>
+<p id="p-listPosts">Derniers billets du blog : <br/>
 </p>
 
 

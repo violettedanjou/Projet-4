@@ -1,4 +1,4 @@
-/* MENU */
+/* Menu */
 body
 {
     margin: 0px;
@@ -77,6 +77,10 @@ li
     text-decoration: underline;
 }
 /* Mise en forme des billets */
+#p-listPosts
+{
+    margin-left: 15%;
+}
 h1, h3
 {
     text-align: center;
@@ -129,7 +133,7 @@ h2
 {
     text-align: center;
 }
-#author, #comment, #button_add_comment
+#author, #comment
 {
     padding: 5px;
     margin-bottom: 10px;
@@ -141,13 +145,17 @@ h2
     width: 400px;
     height: 150px;
 }
-#button_add_comment
+#button_add_comment, #button_signup, #button_signin
 {
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #293561;
+    border-radius: 5px;
     background-color: #293561;
     color: #ffffff;
     font-weight: bold;
 }
-#button_add_comment:hover
+#button_add_comment:hover, #button_signup:hover, #button_signin:hover
 {
     background-color: #ffffff;
     color: #293561;
@@ -157,6 +165,23 @@ h2
 {
     color: red;
 }
+/* PAGE INSCRIPTION */
+#form-inscription, #form-connexion
+{
+    display: flex;
+    justify-content: center;
+    margin: 0px 30% 50px 30%;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.input-inscription, .input-connexion
+{
+    margin-bottom: 10px;
+}
+
+
+
 
 
 

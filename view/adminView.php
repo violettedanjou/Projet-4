@@ -3,7 +3,7 @@
 ob_start(); ?>
 
 <h1>Administration</h1>
-<em><a href="index.php?action=afficheEdition">Ajouter</a></em>
+<em><a href="index.php?action=afficheNewPost">Ajouter</a></em>
 
 
 <?php
@@ -17,16 +17,14 @@ while ($data = $posts->fetch())
         </h3>
         
         <p>
-            <?= nl2br(htmlspecialchars($data['content'])) ?>
-            <br />
-            <em><a href="">Modifier</a></em> /
+            <?= nl2br(htmlspecialchars($data['content'])) ?> <br/>
+            <em><a href="index.php?action=validEdition&amp;id=<?= $data['id'] ?>">Modifier</a></em> /
 			<em><a href="index.php?action=delete&amp;id=<?= $post['id'] ?>">Supprimer</a></em>
         </p>
     </div>
 <?php
 }
 $posts->closeCursor();
-
 
 $content = ob_get_clean(); 
 require('template.php');

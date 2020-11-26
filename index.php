@@ -89,8 +89,8 @@ try {
         if ($_GET['action'] == 'afficheAdmin') {
             afficheAdmin();
         }
-
-        if ($_GET['action'] == 'validEdition') {
+        // Ajouter un nouveau billet
+        if ($_GET['action'] == 'validNewPost') {
 
             if (isset($_POST['title']) AND isset($_POST['content'])) {
                 addPost();
@@ -99,10 +99,21 @@ try {
                 throw new Exception("Veuillez ajouter un nouveau billet.", 1);
             } 
         }
-        elseif ($_GET['action'] == 'afficheEdition') {
+        elseif ($_GET['action'] == 'afficheNewPost') {
             afficheEdition();
         }
-
+        // Modfier un billet
+        elseif($_GET['action'] == 'validEdition') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                editPosts();
+            }
+            else {
+                throw new Exception("Aucun identifiant de billet envoyé.", 1);
+            } 
+        }/*
+        elseif ($_GET['action'] == 'afficheEdition') {
+            afficheEdition();
+        }*/
 
 
 

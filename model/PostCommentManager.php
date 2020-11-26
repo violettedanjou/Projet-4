@@ -3,6 +3,7 @@ require_once("model/Manager.php");
 
 class PostCommentManager extends Manager 
 {
+    // PAGE INSCRIPTION
     public function insertMember($pseudo, $pass, $email) // inscription
     {
         $db = $this->dbConnect();
@@ -18,25 +19,32 @@ class PostCommentManager extends Manager
         $requete = "SELECT pseudo FROM membres WHERE pseudo = '" . $pseudo . "'";
         $req = $db->query($requete); 
         $req->execute();
+
         return $req;
     }
+
+    //PAGE CONNEXION
     public function connectMember($pseudo) //  Récupération de l'utilisateur déjà inscrit 
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT pseudo, pass, id FROM membres WHERE pseudo = :pseudo');
         $req->execute(array(
             'pseudo' => $pseudo));
+
         return $req;
 
-    } 
+    }
+
+    // PAGE LISTE DES BILLETS 
     public function getPosts() // récupération des billets
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM billets ORDER BY creation_date DESC LIMIT 0, 5');
+        $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM billets ORDER BY creation_date DESC LIMIT 0, 10');
 
         return $req;
     }
 
+    // PAGE D'UN BILLET AVEC SES COMMENTAIRES
     public function getPost($postId) // récupération d'un billet grace à son id
     {
         $db = $this->dbConnect();
@@ -46,7 +54,6 @@ class PostCommentManager extends Manager
 
         return $post;
     }
-
     public function getComments($postId) // récupération des commentaires d'un billet
     {
         $db = $this->dbConnect();
@@ -55,7 +62,6 @@ class PostCommentManager extends Manager
 
         return $comments;
     }
-
     public function postComment($postId, $author, $comment) // ajout d'un comment pour un billet 
     {
         $db = $this->dbConnect();
@@ -64,8 +70,9 @@ class PostCommentManager extends Manager
 
         return $affectedLines;
     } 
-    
-    public function addNewPost($title, $content)
+
+    // PAGE ADMINISTRATEUR
+    public function addNewPost($title, $content) // ajout d'un nouveau billet
     {
        $db = $this->dbConnect();
        $newPost = $db->prepare('INSERT INTO billets(title, content, creation_date) VALUES (:title, :content, CURDATE())');
@@ -75,10 +82,15 @@ class PostCommentManager extends Manager
 
        return $addNewPost;
     }
+    public function editPost($postId) // modifier un billet
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS edit_post FROM billets WHERE id = ?');
+        $req->execute(array($postId));
+        $editPost = $req->fetch();
 
-
-
-
+        return $editPost;
+    }
 
 
 

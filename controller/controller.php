@@ -106,7 +106,7 @@ function afficheAdmin() // Afficher la page d'administrateur
 }
 function afficheEdition() // Afficher formulaire pour ajout de nouveau billet 
 {
-	require('view/editionView.php');
+	require('view/additionView.php');
 }
 function addPost() // Ajouter un nouveau billet
 {
@@ -114,6 +114,14 @@ function addPost() // Ajouter un nouveau billet
 	$newPost = $newPostManager->addNewPost($_POST['title'], $_POST['content']);
 
 	header('Location: index.php?action=afficheAdmin');
+}
+function editPosts()
+{
+	
+	$editManager = new PostCommentManager();
+    $edit = $editManager->editPost($_GET['id']);
+
+    require('view/editionView.php');
 }
 
 

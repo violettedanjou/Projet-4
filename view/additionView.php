@@ -1,0 +1,18 @@
+<?php $title = "Ajout de billet"; 
+
+ob_start(); ?>
+
+<h1>Édition</h1>
+	<a href="index.php?action=afficheAdmin">
+		<p>Retour</p>
+	</a>
+
+	<form action="index.php?action=validNewPost" method="POST" >
+      <input type="text" name="title" placeholder="Titre du billet"/><br/><br/>
+      <textarea name="content" placeholder="Contenu du billet..."></textarea><br/>
+      <input type="submit" value="Enregistrer le billet" />
+    </form>
+
+<?php $content = ob_get_clean(); 
+require('template.php');
+?>

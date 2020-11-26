@@ -10,7 +10,9 @@ body
 header
 {
     display: flex;
-    margin: 0px;
+    top: 0;
+    right: 0;
+    left: 0;
     height: auto;
     background-color: #293561;
     color: #ffffff;
@@ -98,3 +100,63 @@ h3
     width: 70%;
     margin: auto;
 }
+/* Mise en forme commentaires */
+#btn_return_listPosts a
+{
+    margin-left: 20px;
+    padding: 5px;
+    border: 1px solid #293561;
+    border-radius: 5px;
+    background-color: #293561;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+#btn_return_listPosts a:hover
+{
+    background-color: #ffffff;
+    color: #293561;
+    font-weight: bold;
+}
+#div-comments
+{
+    box-shadow: 0px 0px 7px black;
+    border-radius: 10px;
+    margin: 50px 50px 50px 50px;
+    padding: 10px;
+}
+h2
+{
+    text-align: center;
+}
+#author, #comment, #button_add_comment
+{
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #293561;
+    border-radius: 5px;
+}
+#comment
+{
+    width: 400px;
+    height: 150px;
+}
+#button_add_comment
+{
+    background-color: #293561;
+    color: #ffffff;
+    font-weight: bold;
+}
+#button_add_comment:hover
+{
+    background-color: #ffffff;
+    color: #293561;
+    font-weight: bold;
+}
+.fa-arrow-left
+{
+    color: red;
+}
+
+
+

@@ -3,7 +3,12 @@
 ob_start(); ?>
 
 <h1>Administration</h1>
-<em><a href="index.php?action=afficheNewPost"><i class="fas fa-plus"></i></a></em>
+
+<em>
+	<a href="index.php?action=afficheNewPost">
+		<i class="fas fa-plus"></i>
+	</a>
+</em>
 
 
 <?php

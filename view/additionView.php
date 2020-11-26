@@ -5,7 +5,9 @@ ob_start(); ?>
 <h1>Nouveau billet</h1>
 
 <p id="btn_return_admin_page">
-	<a href="index.php?action=afficheAdmin"><i class="fas fa-arrow-left"></i>Retour</a>
+	<a href="index.php?action=afficheAdmin">
+		<i class="fas fa-arrow-left"></i>Retour
+	</a>
 </p>
 
 <div id="form-add-new-post">

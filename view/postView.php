@@ -5,7 +5,9 @@
 <h1>Mon super blog !</h1>
 
 <p id="btn_return_listPosts">
-	<a href="index.php"><i class="fas fa-arrow-left"></i>Retour</a>
+	<a href="index.php">
+		<i class="fas fa-arrow-left"></i>Retour
+	</a>
 </p>
 
 <div class="news">

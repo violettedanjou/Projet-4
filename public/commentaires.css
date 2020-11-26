@@ -159,7 +159,7 @@ h2
     width: 400px;
     height: 150px;
 }
-#button_add_comment, #button_signup, #button_signin, #button-send-post
+#button_add_comment, #button_signup, #button_signin, #button-send-post, #button-edit-post
 {
     padding: 5px;
     margin-bottom: 10px;
@@ -169,7 +169,7 @@ h2
     color: #ffffff;
     font-weight: bold;
 }
-#button_add_comment:hover, #button_signup:hover, #button_signin:hover, #button-send-post:hover
+#button_add_comment:hover, #button_signup:hover, #button_signin:hover, #button-send-post:hover, #button-edit-post:hover
 {
     background-color: #ffffff;
     color: #293561;
@@ -185,7 +185,7 @@ h2
     border: 1px solid black;
     border-radius: 10px;
 }
-.input-inscription, .input-connexion, .input-add-new-post
+.input-inscription, .input-connexion, .input-add-new-post, #title-edition, #content-edition
 {
     margin-bottom: 10px;
 }
@@ -199,19 +199,19 @@ h2
     border-radius: 50px;
     font-size: 1.5em; 
 }
-#form-add-new-post
+#form-add-new-post, #form-edition
 {
     margin: 0px 10% 50px 10%;
     padding: 30px;
     border: 1px solid black;
     border-radius: 10px;
 }
-#title-add-new-post
+#title-add-new-post, #title-edition
 {
-    width: 300px;
+    width: 400px;
     height: auto;
 }
-#content-add-new-post
+#content-add-new-post, #content-edition
 {
     width: 500px;
     height: 200px;

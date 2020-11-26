@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <title><?= $title ?></title>
         <link href="public/commentaires.css" rel="stylesheet" /> 
     </head>
@@ -13,7 +14,7 @@
 					<img id="logo" src="public/logoBlog.png" alt="Logo du blog"/>
 				</a>
 			</div>
-			 	
+			
 			<nav>
 				<ul>
 					<?php 

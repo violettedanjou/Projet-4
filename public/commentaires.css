@@ -139,7 +139,7 @@ h3
 }
 #div-comments
 {
-    box-shadow: 0px 0px 7px black;
+    box-shadow: 0px 0px 7px #708090;
     border-radius: 10px;
     margin: 50px 50px 50px 50px;
     padding: 10px;
@@ -183,8 +183,9 @@ h2
     justify-content: center;
     margin: 0px 30% 50px 30%;
     padding: 30px;
-    border: 1px solid black;
+    border: 1px solid transparent;
     border-radius: 10px;
+    box-shadow: 0px 0px 7px #708090; 
 }
 .input-inscription, .input-connexion, .input-add-new-post, #title-edition, #content-edition
 {
@@ -204,8 +205,9 @@ h2
 {
     margin: 0px 10% 50px 10%;
     padding: 30px;
-    border: 1px solid black;
+    border: 1px solid transparent;
     border-radius: 10px;
+    box-shadow: 0px 0px 7px #708090;
 }
 #title-add-new-post, #title-edition
 {

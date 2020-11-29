@@ -65,7 +65,14 @@ try {
         }
         elseif ($_GET['action'] == 'post') { // afficher un billet 
             if (isset($_GET['id']) && $_GET['id'] > 0) {
-                post();
+                    post();
+
+                if (isset($_SESSION['pseudo'])) {
+                    
+                }
+                else {
+                    throw new Exception("Pour voir les commentaires, connectez vous.", 1);   
+                }
             }
             else {
                 throw new Exception("Aucun identifiant de billet envoyé");
@@ -123,13 +130,6 @@ try {
             }
             
         }
-
-
-
-
-
-        
-
     }
     else {
         listPosts();

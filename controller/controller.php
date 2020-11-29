@@ -73,18 +73,18 @@ function listPosts()
 function post()
 {
     $postManager = new PostCommentManager();
-    //$commentManager = new PostCommentManager();
+    $commentManager = new PostCommentManager();
 
     $post = $postManager->getPost($_GET['id']);
-    //$comments = $commentManager->getComments($_GET['id']);
+    $comments = $commentManager->getComments($_GET['id']);
 
     require('view/postView.php');
 }
 // COMMENTAIRES CACHES SI NON CONNECTE
-/*function hidden_comments()
+/*function commentsTest()
 {
-	$h_commentsManager = new PostCommentManager();
-	$h_comments = $h_commentsManager->getPost($_GET['id']);
+	$commentsManager = new PostCommentManager();
+	$comments = $commentsManager->getPost($_GET['id']);
 
 	require('view/postView.php');
 }*/

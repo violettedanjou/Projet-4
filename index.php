@@ -65,19 +65,20 @@ try {
         }
         elseif ($_GET['action'] == 'post') { // afficher un billet 
             if (isset($_GET['id']) && $_GET['id'] > 0) {
-                    post();
-
                 if (isset($_SESSION['pseudo'])) {
-                    
+                    post(); 
                 }
                 else {
-                    throw new Exception("Pour voir les commentaires, connectez vous.", 1);   
-                }
+                    throw new Exception("Pour voir les commentaires, connectez vous.", 1);
+                    
+                }               
             }
             else {
-                throw new Exception("Aucun identifiant de billet envoyé");
+                throw new Exception("Aucun identifiant de billet envoyé", 1);   
             }
         }
+
+
         elseif ($_GET['action'] == 'addComment') { // ajouter un commentaire
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_POST['author']) && !empty($_POST['comment'])) { // vérification des variables POST pour savoir si elles ne sont pas vides
@@ -127,15 +128,14 @@ try {
         elseif ($_GET['action'] == 'validDelete') {
             if (isset($_GET['id']) && $_GET['id'] > 0) { 
                 delete();
-            }
-            
+            }    
         }
     }
     else {
         listPosts();
     }
 }
-catch(Exception $e){
+catch(Exception $e) {
     echo "Erreur : " . $e->getMessage();
 }
 

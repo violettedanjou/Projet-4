@@ -103,7 +103,7 @@ try {
             afficheEdition();
         }
         // Modfier un billet
-        elseif($_GET['action'] == 'validEdition') {
+        elseif($_GET['action'] == 'afficheEdition') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 editPosts();
             }
@@ -111,9 +111,17 @@ try {
                 throw new Exception("Aucun identifiant de billet envoyé.", 1);
             } 
         }
+        elseif ($_GET['action'] == 'validEdition') {
+            if (isset($_POST['id']) && (isset($_POST['title'])) && (isset($_POST['content']))) {
+                savePosts();
+            }
+        }
         // Supprimer un billet
         elseif ($_GET['action'] == 'validDelete') {
-            delete();
+            if (isset($_GET['id']) && $_GET['id'] > 0) { 
+                delete();
+            }
+            
         }
 
 

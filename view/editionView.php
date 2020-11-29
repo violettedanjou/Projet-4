@@ -12,23 +12,23 @@ ob_start(); ?>
 
 <div class="news">
     <h3>
-        <?= htmlspecialchars($_POST['title']);
-        var_dump($_POST['title']);
+        <?= htmlspecialchars($edit['title']);
         ?>
-        <em>le <?= $_POST['edit_post'];
-        var_dump($_POST['edit_post']); ?></em>
+        <em>le <?= $edit['edit_post'];
+        ?></em>
     </h3>
 	    
 	<p>
-	    <?= nl2br(htmlspecialchars($_POST['content'])) ?>
+	    <?= nl2br(htmlspecialchars($edit['content'])) ?>
 	</p>
 </div>
 
 <div id="form-edition">
-	<form method="POST" >
-      <input id="title-edition" type="text" name="title" value="<?= $_POST['title']?>"/><br/>
-      <textarea id="content-edition" name="content" value="<?= $_POST['content']?>"></textarea><br/>
-      <input type="submit" value="Enregistrer" id="button-edit-post" />
+	<form action="index.php?action=validEdition" method="POST">
+		<input type="hidden" name="id" value="<?= $edit['id']?>">
+      	<input id="title-edition" type="text" name="title" value="<?= $edit['title']?>"/><br/>
+     	<textarea id="content-edition" name="content"><?= $edit['content']?></textarea><br/>
+      	<input type="submit" value="Enregistrer" id="button-edit-post" />
     </form>
 </div>
 

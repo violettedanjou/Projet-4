@@ -16,8 +16,7 @@ class PostCommentManager extends Manager
     public function verifyPseudo($pseudo) // Vérification du pseudo existant
     {
         $db = $this->dbConnect();
-        $requete = "SELECT pseudo FROM membres WHERE pseudo = '" . $pseudo . "'";
-        $req = $db->query($requete); 
+        $req = $db->query("SELECT pseudo FROM membres WHERE pseudo = '" . $pseudo . "'"); 
         $req->execute();
 
         return $req;
@@ -91,7 +90,15 @@ class PostCommentManager extends Manager
 
         return $editPost;
     }
-    public function deletePost()
+    public function modifPost($id, $title, $content)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE billets SET title = ?, content = ?, creation_date = NOW() WHERE id = ?');
+        $req->execute(array($title, $content, $id));
+
+        return $req;
+    }
+    public function deletePost($postId) // supprimer un billet
     {
         $db = $this->dbConnect();
         $delete = $db->prepare('DELETE FROM billets WHERE id = ?');

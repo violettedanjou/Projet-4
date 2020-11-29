@@ -123,10 +123,19 @@ function editPosts() // Modifier un billet
 
     require('view/editionView.php');
 }
+function savePosts()
+{
+	$saveManager = new PostCommentManager();
+	$save = $saveManager->modifPost($_POST['id'], $_POST['title'], $_POST['content']);
+
+	header('Location: index.php?action=afficheAdmin');
+}
+
+
 function delete()
 {
 	$deleteManager = new PostCommentManager();
-    $delete = $deleteManager->deletePost();
+    $delete = $deleteManager->deletePost($_GET['id']);
 
 	header('Location: index.php?action=afficheAdmin');
 }

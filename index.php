@@ -65,13 +65,7 @@ try {
         }
         elseif ($_GET['action'] == 'post') { // afficher un billet 
             if (isset($_GET['id']) && $_GET['id'] > 0) {
-                if (isset($_SESSION['pseudo'])) {
-                    post(); 
-                }
-                else {
-                    throw new Exception("Pour voir les commentaires, connectez vous.", 1);
-                    
-                }               
+                    post();             
             }
             else {
                 throw new Exception("Aucun identifiant de billet envoyé", 1);   
@@ -81,11 +75,16 @@ try {
 
         elseif ($_GET['action'] == 'addComment') { // ajouter un commentaire
             if (isset($_GET['id']) && $_GET['id'] > 0) {
-                if (!empty($_POST['author']) && !empty($_POST['comment'])) { // vérification des variables POST pour savoir si elles ne sont pas vides
-                    addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                if (isset($_SESSION['pseudo'])){
+                    if (!empty($_POST['author']) && !empty($_POST['comment'])) { // vérification des variables POST pour savoir si elles ne sont pas vides
+                    addComment($_GET['id'], $_POST['comment']);
+                    }
+                    else {
+                        throw new Exception("Tous les champs ne sont pas remplis");
+                    }
                 }
                 else {
-                    throw new Exception("Tous les champs ne sont pas remplis");
+                    echo "Veuillez vous connecter pour ajouter un commentaire.";
                 }
             }
             else {

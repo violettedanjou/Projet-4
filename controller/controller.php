@@ -80,14 +80,8 @@ function post()
 
     require('view/postView.php');
 }
-// COMMENTAIRES CACHES SI NON CONNECTE
-/*function commentsTest()
-{
-	$commentsManager = new PostCommentManager();
-	$comments = $commentsManager->getPost($_GET['id']);
+// COMMENTAIRES CACHES SI UTILISATEUR NON CONNECTE
 
-	require('view/postView.php');
-}*/
 
 // AJOUT DE COMMENTAIRE(S)
 function addComment($postId, $author, $comment)

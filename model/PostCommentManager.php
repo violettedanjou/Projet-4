@@ -61,7 +61,7 @@ class PostCommentManager extends Manager
 
         return $comments;
     }
-    public function postComment($postId, $author, $comment) // ajout d'un comment pour un billet 
+    public function postComment($postId, $comment) // ajout d'un commentaire pour un billet 
     {
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO commentaires(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
@@ -74,7 +74,7 @@ class PostCommentManager extends Manager
     public function addNewPost($title, $content) // ajout d'un nouveau billet
     {
        $db = $this->dbConnect();
-       $newPost = $db->prepare('INSERT INTO billets(title, content, creation_date) VALUES (:title, :content, CURDATE())');
+       $newPost = $db->prepare('INSERT INTO billets(title, content, creation_date) VALUES (:title, :content, NOW())');
        $addNewPost = $newPost->execute(array(
             'title' => $title,
             'content' => $content));

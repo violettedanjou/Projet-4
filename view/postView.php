@@ -41,7 +41,7 @@
 	{
 	?>
 	    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-	    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p><a href="index.php?action=validReport&amp;comment=<?= $data['comment'] ?>">Signaler</a>
+	    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p><a href="index.php?action=validReport&amp;id=<?= $comment['id'] ?>">Signaler</a>
 
 	<?php
 	}

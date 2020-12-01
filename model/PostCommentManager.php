@@ -72,7 +72,7 @@ class PostCommentManager extends Manager
     public function reportComment($id)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT report FROM commentaires WHERE id = ?');
+        $req = $db->prepare('INSERT INTO commentaires(report) VALUES(?)');
         $req->execute(array($id));
 
         return $req;

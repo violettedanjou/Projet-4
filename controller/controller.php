@@ -101,7 +101,7 @@ function report()
 
 	//if ($_SESSION['report'] == true) {
 
-	}
+	
 }
 
 // PAGE ADMINISTRATEUR

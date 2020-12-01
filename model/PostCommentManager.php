@@ -68,7 +68,15 @@ class PostCommentManager extends Manager
         $affectedLines = $comments->execute(array($postId, $author, $comment));
 
         return $affectedLines;
-    } 
+    }
+    public function reportComment($id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT report FROM commentaires WHERE id = ?');
+        $req->execute(array($id));
+
+        return $req;
+    }
 
     // PAGE ADMINISTRATEUR
     public function addNewPost($title, $content) // ajout d'un nouveau billet
@@ -81,7 +89,7 @@ class PostCommentManager extends Manager
 
        return $addNewPost;
     }
-    public function editPost($postId) // modifier un billet
+    public function editPost($postId) // récupération d'un billet pour le modifier 
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS edit_post FROM billets WHERE id = ?');
@@ -90,7 +98,7 @@ class PostCommentManager extends Manager
 
         return $editPost;
     }
-    public function modifPost($id, $title, $content)
+    public function modifPost($id, $title, $content) // modification d'un  billet
     {
         $db = $this->dbConnect();
         $req = $db->prepare('UPDATE billets SET title = ?, content = ?, creation_date = NOW() WHERE id = ?');

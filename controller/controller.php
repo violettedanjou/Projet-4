@@ -98,6 +98,10 @@ function report()
 {
 	$reportManager = new PostCommentManager();
 	$report = $reportManager->reportComment($_GET['id']);
+
+	//if ($_SESSION['report'] == true) {
+
+	}
 }
 
 // PAGE ADMINISTRATEUR
@@ -119,7 +123,7 @@ function addPost() // Ajouter un nouveau billet
 
 	header('Location: index.php?action=afficheAdmin');
 }
-function editPosts() // Modifier un billet
+function editPosts() // récupération d'un billet pour le modifier
 {
 	
 	$editManager = new PostCommentManager();
@@ -127,7 +131,7 @@ function editPosts() // Modifier un billet
 
     require('view/editionView.php');
 }
-function savePosts()
+function savePosts() // modification d'un  billet
 {
 	$saveManager = new PostCommentManager();
 	$save = $saveManager->modifPost($_POST['id'], $_POST['title'], $_POST['content']);

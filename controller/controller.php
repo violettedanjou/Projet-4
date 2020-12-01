@@ -80,14 +80,10 @@ function post()
 
     require('view/postView.php');
 }
-// COMMENTAIRES CACHES SI UTILISATEUR NON CONNECTE
-
-
 // AJOUT DE COMMENTAIRE(S)
 function addComment($postId, $author, $comment)
 {
     $commentManager = new PostCommentManager();
-
     $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
     if ($affectedLines === false) {
@@ -96,6 +92,12 @@ function addComment($postId, $author, $comment)
     else {
         header('Location: index.php?action=post&id=' . $postId);
     }
+}
+// SIGNALER UN COMMENTAIRE 
+function report()
+{
+	$reportManager = new PostCommentManager();
+	$report = $reportManager->reportComment($_GET['id']);
 }
 
 // PAGE ADMINISTRATEUR

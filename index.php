@@ -59,7 +59,7 @@ try {
             disconnection();    
         }
 
-// LISTE DES BILLETS 
+// BILLETS 
         elseif ($_GET['action'] == 'listPosts') {
             listPosts(); //affiche la listes des billets
         }
@@ -85,12 +85,27 @@ try {
                 }
                 else {
                     throw new Exception("Veuillez vous connecter pour ajouter un commentaire.", 1);
-                    
                 }
             }
             else {
                 throw new Exception("Aucun identifiant de billet envoyé");
             }
+        }
+
+        elseif ($_GET['action'] == 'validReport') { // signaler un commentaire
+            if (isset($_SESSION['pseudo'])) {
+                if ($_SESSION['report'] == true) {
+                    report();
+                    echo "Commentaire signalé";
+                }
+                else {
+                    throw new Exception("Commentaire non signalé", 1);
+                }
+            }
+            else {
+                throw new Exception("Veuillez vous connecter pour signaler un commentaire.", 1);
+            }
+
         }
 
 // ADMIN

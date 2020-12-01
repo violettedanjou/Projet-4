@@ -84,7 +84,8 @@ try {
                     }
                 }
                 else {
-                    echo "Veuillez vous connecter pour ajouter un commentaire.";
+                    throw new Exception("Veuillez vous connecter pour ajouter un commentaire.", 1);
+                    
                 }
             }
             else {

@@ -69,11 +69,11 @@ class PostCommentManager extends Manager
 
         return $affectedLines;
     }
-    public function reportComment($id)
+    public function reportComment($report, $id)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('INSERT INTO commentaires(report) VALUES(?)');
-        $req->execute(array($id));
+        $req = $db->prepare('UPDATE commentaires SET report ? WHERE id = ?');
+        $req->execute(array($report, $id));
 
         return $req;
     }

@@ -16,7 +16,6 @@ function insert()
 	$pseudoExist = $PCManager->verifyPseudo($_POST['pseudo']);
 	$nbrResult = $pseudoExist->rowCount();
 	if ($nbrResult == 0) {
-		//echo "Le pseudo n'est pas encore utilisé.";
 	    $PCManager = new PostCommentManager();
 	    $newMember = $PCManager->insertMember($_POST['pseudo'], $_POST['pass'], $_POST['email']);
 	    header('Location: index.php');	
@@ -97,11 +96,9 @@ function addComment($postId, $author, $comment)
 function report()
 {
 	$reportManager = new PostCommentManager();
-	$report = $reportManager->reportComment($_GET['id']);
+	$report = $reportManager->reportComment($_GET['id'], $_GET['report']);	
 
-	//if ($_SESSION['report'] == true) {
-
-	
+	require('view/postView.php');
 }
 
 // PAGE ADMINISTRATEUR

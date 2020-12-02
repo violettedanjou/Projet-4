@@ -94,7 +94,7 @@ try {
 
         elseif ($_GET['action'] == 'validReport') { // signaler un commentaire
             if (isset($_SESSION['pseudo'])) {
-                if ($_SESSION['report'] == true) {
+                if (($_GET['action'] == 'validReport') === true) {
                     report();
                     echo "Commentaire signalé";
                 }

@@ -69,13 +69,13 @@ class PostCommentManager extends Manager
 
         return $affectedLines;
     }
-    public function reportComment($report, $id)
+    public function reportComment($report, $postId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE commentaires SET report ? WHERE id = ?');
-        $req->execute(array($report, $id));
+        $report = $db->prepare('UPDATE commentaires SET report = ? WHERE id_post = ?');
+        $report->execute(array($report, $postId));
 
-        return $req;
+        return $report;
     }
 
     // PAGE ADMINISTRATEUR

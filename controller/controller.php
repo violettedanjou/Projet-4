@@ -96,7 +96,7 @@ function addComment($postId, $author, $comment)
 function report()
 {
 	$reportManager = new PostCommentManager();
-	$report = $reportManager->reportComment($_GET['id'], $_GET['report']);	
+	$report = $reportManager->reportComment($_POST['report'], $_GET['id']);	
 
 	require('view/postView.php');
 }

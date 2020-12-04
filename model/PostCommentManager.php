@@ -26,7 +26,7 @@ class PostCommentManager extends Manager
     public function connectMember($pseudo) //  Récupération de l'utilisateur déjà inscrit 
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT pseudo, pass, id FROM membres WHERE pseudo = :pseudo');
+        $req = $db->prepare('SELECT pseudo, pass, id, admin FROM membres WHERE pseudo = :pseudo');
         $req->execute(array(
             'pseudo' => $pseudo));
 
@@ -65,15 +65,15 @@ class PostCommentManager extends Manager
     {
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO commentaires(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
-        $affectedLines = $comments->execute(array($postId, $author, $comment));
+        $affectedLines = $comments->execute(array($postId, $_SESSION['id'], $comment));
 
         return $affectedLines;
     }
-    public function reportComment($report, $postId)
+    public function reportComment($id)
     {
         $db = $this->dbConnect();
-        $report = $db->prepare('UPDATE commentaires SET report = ? WHERE id_post = ?');
-        $report->execute(array($report, $postId));
+        $report = $db->prepare('UPDATE commentaires SET report = 1 WHERE id = ?');
+        $report->execute(array($id));
 
         return $report;
     }

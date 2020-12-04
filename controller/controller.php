@@ -39,7 +39,9 @@ function connect()
     	$user = $connect->fetch();
     	$pass_hache = $user['pass'];
     	if (password_verify($_POST['pass'], $pass_hache)) {
+    		$_SESSION['id'] = $user['id'];
         	$_SESSION['pseudo'] = $_POST['pseudo'];
+        	$_SESSION['admin'] = $user['admin'];
        		header('Location: index.php');
     	}
     	else {
@@ -80,10 +82,10 @@ function post()
     require('view/postView.php');
 }
 // AJOUT DE COMMENTAIRE(S)
-function addComment($postId, $author, $comment)
+function addComment($postId, $comment)
 {
     $commentManager = new PostCommentManager();
-    $affectedLines = $commentManager->postComment($postId, $author, $comment);
+    $affectedLines = $commentManager->postComment($postId, $comment);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
@@ -96,7 +98,7 @@ function addComment($postId, $author, $comment)
 function report()
 {
 	$reportManager = new PostCommentManager();
-	$report = $reportManager->reportComment($_POST['report'], $_GET['id']);	
+	$report = $reportManager->reportComment($_GET['id']);	
 
 	require('view/postView.php');
 }

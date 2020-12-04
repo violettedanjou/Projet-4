@@ -24,17 +24,23 @@
 <div id="div-comments">
 	<h2>Commentaires</h2>
 
-	<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-		<div>
-        <label for="author">Auteur</label><br /><input type="text" id="author" name="author" />
-   		</div>
-	    <div>
-	        <label for="comment">Commentaire</label><br /><textarea id="comment" name="comment"></textarea>
-	    </div>
-	    <div>
-	        <input type="submit" id="button_add_comment" />
-	    </div>
-	</form>
+	<?php if (isset($_SESSION['id'])) { ?>
+		<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+		    <div>
+		        <label for="comment">Commentaire</label><br /><textarea id="comment" name="comment"></textarea>
+		    </div>
+		    <div>
+		        <input type="submit" id="button_add_comment" />
+		    </div>
+		</form>	
+	<?php 
+	}
+	 else {
+	 	echo "Veuillez vous connecter pour ajouter un commentaire.";
+	 }
+	?>
+
+
 
 	<?php
 	while ($comment = $comments->fetch())

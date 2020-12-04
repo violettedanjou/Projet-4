@@ -75,9 +75,9 @@ try {
 
         elseif ($_GET['action'] == 'addComment') { // ajouter un commentaire
             if (isset($_GET['id']) && $_GET['id'] > 0) {
-                if (isset($_SESSION['pseudo'])) {
-                    if (!empty($_POST['author']) && !empty($_POST['comment'])) { // vérification des variables POST pour savoir si elles ne sont pas vides
-                    addComment($_GET['id'], $_POST['comment']);
+                if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {
+                    if (!empty($_POST['comment'])) {
+                        addComment($_GET['id'], $_POST['comment']);
                     }
                     else {
                         throw new Exception("Tous les champs ne sont pas remplis");
@@ -93,19 +93,8 @@ try {
         }
 
         elseif ($_GET['action'] == 'validReport') { // signaler un commentaire
-            if (isset($_SESSION['pseudo'])) {
-                if (($_GET['action'] == 'validReport') === true) {
                     report();
                     echo "Commentaire signalé";
-                }
-                else {
-                    throw new Exception("Commentaire non signalé", 1);
-                }
-            }
-            else {
-                throw new Exception("Veuillez vous connecter pour signaler un commentaire.", 1);
-            }
-
         }
 
 // ADMIN

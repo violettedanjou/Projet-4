@@ -74,7 +74,7 @@ class PostCommentManager extends Manager
         $db = $this->dbConnect();
         $report = $db->prepare('UPDATE commentaires SET report = 1 WHERE id = ?');
         $report->execute(array($id));
-
+        
         return $report;
     }
 

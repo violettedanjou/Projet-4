@@ -13,7 +13,9 @@ while ($data = $posts->fetch())
 ?>
     <div class="news">
         <h3>
-            <?= htmlspecialchars($data['title']) ?>
+            <a id="click-post-title" href="index.php?action=post&amp;id=<?= $data['id'] ?>">
+                <?= htmlspecialchars($data['title']) ?>
+            </a>
             <em>le <?= $data['creation_date_fr'] ?></em>
         </h3>
         

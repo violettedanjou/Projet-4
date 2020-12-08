@@ -1,8 +1,8 @@
 <?php
-
 // Chargement des classes
-require_once('model/PostCommentManager.php'); // require_once permet de ne pas charger deux fois la classe
-//require_once('model/CommentManager.php');
+require_once('model/PostManager.php'); // require_once permet de ne pas charger deux fois la classe
+require_once('model/CommentManager.php');
+require_once('model/MemberManager.php');
 
 
 // PAGE INSCRIPTION

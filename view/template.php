@@ -21,7 +21,7 @@
 							<li class="li" id="button_deconnexion"><a href="index.php?action=validDeconnexion">Déconnexion</a></li>
 
 							<?php if($_SESSION['admin'] != 0) { ?>
-								<li class="li" id="button_admin"><a href="index.php?action=afficheAdmin">Administrateur</a></li>
+								<li class="li" id="button_admin"><a href="index.php?action=afficheAdmin">Administration</a></li>
 							<?php }
 						}
 						

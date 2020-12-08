@@ -1,5 +1,5 @@
 <?php
 require_once("model/Manager.php");
 
-class PostManager extends Manager 
+class MemberManager extends Manager 
 {

@@ -100,7 +100,7 @@ function report()
 	$reportManager = new PostCommentManager();
 	$report = $reportManager->reportComment($_GET['id']);	
 
-	require('view/postView.php');
+	//require('view/postView.php');
 }
 
 // PAGE ADMINISTRATEUR

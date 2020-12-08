@@ -17,8 +17,10 @@ while ($data = $posts->fetch())
 ?>
     <div class="news">
         <h3>
-            <?= htmlspecialchars($data['title']) ?>
-            <em>le <?= $data['creation_date_fr'] ?></em>
+        	<a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
+            	<?= htmlspecialchars($data['title']) ?>
+            	<em>le <?= $data['creation_date_fr'] ?></em>
+            </a>
         </h3>
         
         <p id="links-edit-delete">

@@ -35,9 +35,9 @@
 		</form>	
 	<?php 
 	}
-	 else {
-	 	echo "Veuillez vous connecter pour ajouter un commentaire.";
-	 }
+	else {
+		echo "Veuillez vous connecter pour ajouter un commentaire.";
+	}
 	?>
 
 
@@ -47,7 +47,16 @@
 	{
 	?>
 	    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-	    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p><a href="index.php?action=validReport&amp;id=<?= $comment['id'] ?>">Signaler</a>
+	    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+
+		<?php if (isset($_SESSION['id'])) { ?>
+	    	<a href="index.php?action=validReport&amp;id=<?= $comment['id'] ?>">Signaler</a>
+		<?php 
+		}
+		else {
+		 	echo "Veuillez vous connecter pour signaler un commentaire.";
+		}
+		?>
 
 	<?php
 	}
@@ -55,4 +64,7 @@
 
 	<?php $content = ob_get_clean(); ?>
 </div>
+
 <?php require('view/template.php'); ?>
+
+

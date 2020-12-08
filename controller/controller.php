@@ -12,11 +12,11 @@ function afficheInscription()
 }
 function insert()
 {
-	$PCManager = new PostCommentManager();
+	$PCManager = new MemberManager();
 	$pseudoExist = $PCManager->verifyPseudo($_POST['pseudo']);
 	$nbrResult = $pseudoExist->rowCount();
 	if ($nbrResult == 0) {
-	    $PCManager = new PostCommentManager();
+	    $PCManager = new MemberManager();
 	    $newMember = $PCManager->insertMember($_POST['pseudo'], $_POST['pass'], $_POST['email']);
 	    header('Location: index.php');	
 	}
@@ -32,7 +32,7 @@ function afficheConnection()
 }
 function connect()
 {
-    $PCManager = new PostCommentManager();
+    $PCManager = new MemberManager();
     $connect = $PCManager->connectMember($_POST['pseudo']);
     $nbrResult = $connect->rowCount();
     if ($nbrResult == 1) {
@@ -65,7 +65,7 @@ function disconnection() // Suppression des variables de session et de la sessio
 // LISTE DES BILLETS
 function listPosts()
 {
-    $postManager = new PostCommentManager(); // Création d'un objet
+    $postManager = new PostManager(); // Création d'un objet
     $posts = $postManager->getPosts(); // Appel d'une fonction, getPosts(), dans cet objet
 
     require('view/listPostsView.php');
@@ -73,8 +73,8 @@ function listPosts()
 // 1 BILLET EN PARTICULIER 
 function post()
 {
-    $postManager = new PostCommentManager();
-    $commentManager = new PostCommentManager();
+    $postManager = new PostManager();
+    $commentManager = new CommentManager();
 
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
@@ -84,7 +84,7 @@ function post()
 // AJOUT DE COMMENTAIRE(S)
 function addComment($postId, $comment)
 {
-    $commentManager = new PostCommentManager();
+    $commentManager = new CommentManager();
     $affectedLines = $commentManager->postComment($postId, $comment);
 
     if ($affectedLines === false) {
@@ -97,7 +97,7 @@ function addComment($postId, $comment)
 // SIGNALER UN COMMENTAIRE 
 function report()
 {
-	$reportManager = new PostCommentManager();
+	$reportManager = new CommentManager();
 	$report = $reportManager->reportComment($_GET['id']);	
 
 	//require('view/postView.php');
@@ -106,7 +106,7 @@ function report()
 // PAGE ADMINISTRATEUR
 function afficheAdmin() // Afficher la page d'administrateur
 {
-	$postManager = new PostCommentManager(); 
+	$postManager = new PostManager(); 
     $posts = $postManager->getPosts();
 
     require('view/adminView.php');
@@ -117,7 +117,7 @@ function afficheEdition() // Afficher formulaire pour ajout de nouveau billet
 }
 function addPost() // Ajouter un nouveau billet
 {
-	$newPostManager = new PostCommentManager();
+	$newPostManager = new PostManager();
 	$newPost = $newPostManager->addNewPost($_POST['title'], $_POST['content']);
 
 	header('Location: index.php?action=afficheAdmin');
@@ -125,14 +125,14 @@ function addPost() // Ajouter un nouveau billet
 function editPosts() // récupération d'un billet pour le modifier
 {
 	
-	$editManager = new PostCommentManager();
+	$editManager = new PostManager();
     $edit = $editManager->editPost($_GET['id']);
 
     require('view/editionView.php');
 }
 function savePosts() // modification d'un  billet
 {
-	$saveManager = new PostCommentManager();
+	$saveManager = new PostManager();
 	$save = $saveManager->modifPost($_POST['id'], $_POST['title'], $_POST['content']);
 
 	header('Location: index.php?action=afficheAdmin');
@@ -141,7 +141,7 @@ function savePosts() // modification d'un  billet
 
 function delete()
 {
-	$deleteManager = new PostCommentManager();
+	$deleteManager = new PostManager();
     $delete = $deleteManager->deletePost($_GET['id']);
 
 	header('Location: index.php?action=afficheAdmin');

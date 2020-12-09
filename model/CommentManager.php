@@ -20,6 +20,14 @@ class CommentManager extends Manager
 
         return $affectedLines;
     }
+    public function pseudoAuthor($author, $pseudo)
+    {
+    	$db = $this->dbConnect();
+    	$pseudo = $db->prepare('SELECT c.author AS id_author, m.pseudo AS nom_author FROM membres m LEFT JOIN commentaires c ON c.author = m.pseudo');
+    	$pseudo->execute(array($author, $pseudo));
+
+    	return $pseudo;
+    }
     public function reportComment($id)
     {
         $db = $this->dbConnect();

@@ -85,7 +85,10 @@ function post()
 function addComment($postId, $comment)
 {
     $commentManager = new CommentManager();
+    $pseudoManager = new CommentManager();
+    
     $affectedLines = $commentManager->postComment($postId, $comment);
+    $authorPseudo = $pseudoManager->pseudoAuthor($author, $pseudo);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');

@@ -23,7 +23,7 @@ class CommentManager extends Manager
     public function pseudoAuthor($author, $pseudo)
     {
     	$db = $this->dbConnect();
-    	$pseudo = $db->prepare('SELECT c.author AS id_author, m.pseudo AS nom_author FROM membres m LEFT JOIN commentaires c ON c.author = m.pseudo');
+    	$pseudo = $db->prepare('SELECT c.author AS id_author, m.pseudo AS nom_author FROM membres m LEFT JOIN commentaires c ON c.author = m.pseudo WHERE m.pseudo is NULL');
     	$pseudo->execute(array($author, $pseudo));
 
     	return $pseudo;
@@ -36,4 +36,12 @@ class CommentManager extends Manager
 
         return $report;
     }
+    /*public function reportAdmin($id)
+    {
+    	$db = $this->dbConnect();
+    	$admin = $db->prepare('SELECT id, author, comment, report AS comment_report FROM commentaires WHERE id = ?');
+    	$admin->execute(array($id));
+
+    	return $admin;
+    }*/
 }

@@ -50,7 +50,9 @@
 	    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
 
 		<?php if (isset($_SESSION['id'])) { ?>
-	    	<a href="index.php?action=validReport&amp;id=<?= $comment['id'] ?>">Signaler</a>
+			<div id="button-report">
+	    		<a  href="index.php?action=validReport&amp;id=<?= $comment['id'] ?>">Signaler</a>
+	    	</div>
 		<?php 
 		}
 		else {

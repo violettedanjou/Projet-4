@@ -86,7 +86,7 @@ function addComment($postId, $comment)
 {
     $commentManager = new CommentManager();
     $pseudoManager = new CommentManager();
-    
+
     $affectedLines = $commentManager->postComment($postId, $comment);
     $authorPseudo = $pseudoManager->pseudoAuthor($author, $pseudo);
 
@@ -101,10 +101,16 @@ function addComment($postId, $comment)
 function report()
 {
 	$reportManager = new CommentManager();
-	$report = $reportManager->reportComment($_GET['id']);	
+	$report = $reportManager->reportComment($_GET['id']);
 
-	//require('view/postView.php');
+	header('Location: ');
 }
+/*
+function arevoir()
+{
+	$adminManager = new CommentManager();
+	$admin = $adminManager->reportAdmin($_GET['id']);
+}*/
 
 // PAGE ADMINISTRATEUR
 function afficheAdmin() // Afficher la page d'administrateur

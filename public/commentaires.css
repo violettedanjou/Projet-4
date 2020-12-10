@@ -176,6 +176,10 @@ h2
     color: #293561;
     font-weight: bold;
 }
+#button-report a
+{
+    color: blue;
+}
 /* PAGE INSCRIPTION */
 #form-inscription, #form-connexion
 {

@@ -77,7 +77,7 @@ function post()
     $commentManager = new CommentManager();
 
     $post = $postManager->getPost($_GET['id']);
-    $comments = $commentManager->getComments($_GET['id']);
+    $comments = $commentManager->pseudoAuthor($_GET['id']);
 
     require('view/postView.php');
 }
@@ -85,10 +85,10 @@ function post()
 function addComment($postId, $comment)
 {
     $commentManager = new CommentManager();
-    $pseudoManager = new CommentManager();
+    //$pseudoManager = new CommentManager();
 
     $affectedLines = $commentManager->postComment($postId, $comment);
-    $authorPseudo = $pseudoManager->pseudoAuthor($author, $pseudo);
+    //$authorPseudo = $pseudoManager->pseudoAuthor($postId);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
@@ -103,7 +103,7 @@ function report()
 	$reportManager = new CommentManager();
 	$report = $reportManager->reportComment($_GET['id']);
 
-	header('Location: ');
+	header('Location: index.php?action=post&id='. $_GET['post_id']);
 }
 /*
 function arevoir()

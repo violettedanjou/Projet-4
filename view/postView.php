@@ -46,12 +46,12 @@
 	while ($comment = $comments->fetch())
 	{
 	?>
-	    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
+	    <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
 	    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
 
 		<?php if (isset($_SESSION['id'])) { ?>
 			<div id="button-report">
-	    		<a  href="index.php?action=validReport&amp;id=<?= $comment['id'] ?>">Signaler</a>
+	    		<a  href="index.php?action=validReport&amp;id=<?= $comment['id'] ?>&amp;post_id=<?= $post['id']?>">Signaler</a>
 	    	</div>
 		<?php 
 		}

@@ -30,10 +30,36 @@ while ($data = $posts->fetch())
 			<em><a href="index.php?action=validDelete&amp;id=<?= $data['id'] ?>">Supprimer</a></em>
         </p>
     </div>
+<?php 
+} ?>
+
+<h1>Commentaires signalés</h1>
+
 <?php
-}
+while ($data_report = $admin->fetch())
+{
+?>
+
+	<div id="list_reports">
+		<h4>
+			<? nl2br(htmlspecialchars($data_report['comment'])) ?>
+			<em>le <?= $data_report['report'] ?></em> ?>
+		</h4>
+	</div>
+
+
+<?php
 $posts->closeCursor();
 
 $content = ob_get_clean(); 
 require('template.php');
 ?>
+
+
+
+
+
+
+
+
+

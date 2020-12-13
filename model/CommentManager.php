@@ -24,7 +24,6 @@ class CommentManager extends Manager
     {
     	$db = $this->dbConnect();
     	$pseudoComment = $db->prepare('SELECT membres.pseudo, commentaires.id, commentaires.comment, DATE_FORMAT(commentaires.comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM commentaires INNER JOIN membres ON commentaires.author = membres.id WHERE commentaires.post_id = ?');
-    	//$pseudo = $db->prepare('SELECT c.author AS id_author, m.pseudo AS nom_author FROM membres m LEFT JOIN commentaires c ON c.author = m.pseudo WHERE m.pseudo is NULL');
     	$pseudoComment->execute(array($postId));
 
     	return $pseudoComment;
@@ -37,11 +36,12 @@ class CommentManager extends Manager
 
         return $report;
     }
-    public function reportAdmin($id)
+    public function reportAdmin($report)
     {
     	$db = $this->dbConnect();
-    	$admin = $db->prepare('SELECT id, author, comment, report AS comment_report FROM commentaires WHERE id = ?');
-    	$admin->execute(array($id));
+    	$req = $db->prepare('SELECT comment, report AS comment_report FROM commentaires WHERE report = 1');
+    	$req->execute(array($report));
+    	$admin = $req->fetch();
 
     	return $admin;
     }

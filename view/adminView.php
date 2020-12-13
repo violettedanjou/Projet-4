@@ -31,35 +31,20 @@ while ($data = $posts->fetch())
         </p>
     </div>
 <?php 
-} ?>
+} 
+$posts->closeCursor(); 
+?>
 
 <h1>Commentaires signalés</h1>
 
-<?php
-while ($data_report = $admin->fetch())
-{
-?>
-
 	<div id="list_reports">
 		<h4>
-			<? nl2br(htmlspecialchars($data_report['comment'])) ?>
-			<em>le <?= $data_report['report'] ?></em> ?>
+			<em>le <?= $data['creation_date_fr'] ?></em>
+			<?= nl2br(htmlspecialchars($data['comment'])) ?>
 		</h4>
 	</div>
 
-
 <?php
-$posts->closeCursor();
-
 $content = ob_get_clean(); 
 require('template.php');
 ?>
-
-
-
-
-
-
-
-
-

@@ -25,6 +25,8 @@ function insert()
 	}
 }
 
+
+
 //PAGE CONNEXION
 function afficheConnection()
 {
@@ -54,6 +56,8 @@ function connect()
     header('Location: index.php');
 }
 
+
+
 //PAGE DECONNEXION
 function disconnection() // Suppression des variables de session et de la session
 {
@@ -61,6 +65,8 @@ function disconnection() // Suppression des variables de session et de la sessio
 	session_destroy();
 	header('Location: index.php');
 }
+
+
 
 // LISTE DES BILLETS
 function listPosts()
@@ -70,6 +76,9 @@ function listPosts()
 
     require('view/listPostsView.php');
 }
+
+
+
 // 1 BILLET EN PARTICULIER 
 function post()
 {
@@ -81,14 +90,14 @@ function post()
 
     require('view/postView.php');
 }
+
+
+
 // AJOUT DE COMMENTAIRE(S)
 function addComment($postId, $comment)
 {
     $commentManager = new CommentManager();
-    //$pseudoManager = new CommentManager();
-
     $affectedLines = $commentManager->postComment($postId, $comment);
-    //$authorPseudo = $pseudoManager->pseudoAuthor($postId);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
@@ -97,6 +106,9 @@ function addComment($postId, $comment)
         header('Location: index.php?action=post&id=' . $postId);
     }
 }
+
+
+
 // SIGNALER UN COMMENTAIRE 
 function report()
 {
@@ -105,12 +117,8 @@ function report()
 
 	header('Location: index.php?action=post&id='. $_GET['post_id']);
 }
-/*
-function arevoir()
-{
-	$adminManager = new CommentManager();
-	$admin = $adminManager->reportAdmin($_GET['id']);
-}*/
+
+
 
 // PAGE ADMINISTRATEUR
 function afficheAdmin() // Afficher la page d'administrateur
@@ -120,10 +128,20 @@ function afficheAdmin() // Afficher la page d'administrateur
 
     require('view/adminView.php');
 }
+
+function afficheReport() // Afficher les commentaires signalés
+{
+	$adminManager = new CommentManager();
+	$admin = $adminManager->reportAdmin($_GET['report']);
+
+	require('view/adminView.php');
+}
+
 function afficheEdition() // Afficher formulaire pour ajout de nouveau billet 
 {
 	require('view/additionView.php');
 }
+
 function addPost() // Ajouter un nouveau billet
 {
 	$newPostManager = new PostManager();
@@ -131,6 +149,7 @@ function addPost() // Ajouter un nouveau billet
 
 	header('Location: index.php?action=afficheAdmin');
 }
+
 function editPosts() // récupération d'un billet pour le modifier
 {
 	
@@ -139,6 +158,7 @@ function editPosts() // récupération d'un billet pour le modifier
 
     require('view/editionView.php');
 }
+
 function savePosts() // modification d'un  billet
 {
 	$saveManager = new PostManager();
@@ -147,8 +167,7 @@ function savePosts() // modification d'un  billet
 	header('Location: index.php?action=afficheAdmin');
 }
 
-
-function delete()
+function delete() // Supprimer un billet
 {
 	$deleteManager = new PostManager();
     $delete = $deleteManager->deletePost($_GET['id']);

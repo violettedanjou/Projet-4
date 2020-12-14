@@ -1,4 +1,4 @@
-<?php $title = "Modification de billet"; 
+<?php $title = "Modification de billet";
 
 ob_start(); ?>
 

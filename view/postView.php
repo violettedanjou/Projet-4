@@ -5,9 +5,16 @@
 <h1>Mon super blog !</h1>
 
 <p id="btn_return_listPosts">
-	<a href="index.php">
-		<i class="fas fa-arrow-left"></i>Retour
-	</a>
+	<?php if($_SESSION['admin'] != 0) { ?>
+		<a href="index.php?action=afficheAdmin">
+			<i class="fas fa-arrow-left"></i>Retour
+		</a>
+	<?php }
+	elseif(isset($_SESSION['pseudo'])) { ?>
+		<a href="index.php">
+			<i class="fas fa-arrow-left"></i>Retour
+		</a>
+	<?php } ?>
 </p>
 
 <div class="news">

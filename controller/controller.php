@@ -132,7 +132,7 @@ function afficheAdmin() // Afficher la page d'administrateur
 function afficheReport() // Afficher les commentaires signalés
 {
 	$adminManager = new CommentManager();
-	$admin = $adminManager->reportAdmin($_GET['report']);
+	$admin = $adminManager->reportAdmin();
 
 	require('view/adminView.php');
 }

@@ -36,12 +36,11 @@ class CommentManager extends Manager
 
         return $report;
     }
-    public function reportAdmin($report)
+    public function reportAdmin()
     {
     	$db = $this->dbConnect();
-    	$req = $db->prepare('SELECT comment, report AS comment_report FROM commentaires WHERE report = 1');
-    	$req->execute(array($report));
-    	$admin = $req->fetch();
+    	$req = $db->query('SELECT comment, report AS comment_report, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM commentaires');
+    	$req->execute(array());
 
     	return $admin;
     }

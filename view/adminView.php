@@ -38,14 +38,15 @@ $posts->closeCursor();
 <h1>Commentaires signalés</h1>
 
 <?php
-while ($data_report = $admin->fetch())
+while ($data = $admin->fetch())
 {
 ?>
 
 	<div id="list_reports">
 		<h4>
-			<em>le <?= $data_report['creation_date_fr'] ?></em>
-			<?= nl2br(htmlspecialchars($data_report['comment_report'])) ?>
+			<em>le <?= $data['creation_date_fr'] ?></em>
+			<?= $data['comment_report'] ?><br/>
+			<p><?= nl2br(htmlspecialchars($data['comment'])) ?></p>
 		</h4>
 	</div>
 

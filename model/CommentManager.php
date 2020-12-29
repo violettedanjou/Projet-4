@@ -11,7 +11,7 @@ class CommentManager extends Manager
 
         return $affectedLines;
     }
-    public function pseudoAuthor($postId)
+    public function pseudoAuthor($postId) // jointure : récupérer le pseudo d'un membre grace à son id
     {
     	$db = $this->dbConnect();
     	$pseudoComment = $db->prepare('SELECT membres.pseudo, commentaires.id, commentaires.comment, DATE_FORMAT(commentaires.comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM commentaires INNER JOIN membres ON commentaires.author = membres.id WHERE commentaires.post_id = ?');
@@ -19,7 +19,7 @@ class CommentManager extends Manager
 
     	return $pseudoComment;
     }
-    public function reportComment($id)
+    public function reportComment($id) //signaler un commentaire
     {
         $db = $this->dbConnect();
         $report = $db->prepare('UPDATE commentaires SET report = 1 WHERE id = ?');
@@ -27,14 +27,21 @@ class CommentManager extends Manager
 
         return $report;
     }
-    public function reportAdmin()
+    public function reportAdmin() // afficher la liste des commentaires signalés
     {
     	$db = $this->dbConnect();
     	$req = $db->query('SELECT id, comment, report AS comment_report, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM commentaires WHERE report = 1 ORDER BY creation_date_fr ASC');
 
     	return $req;
     }
-    public function deleteCommentReport($postId)
+    public function removeReport() // retirer le signalement d'un commentaire
+    {
+    	$db = $this->dbConnect();
+    	$req = $db->prepare('SELECT id, post_id, author, comment, report, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM commentaires WHERE id = ?');
+
+    	return $req;
+    }
+    public function deleteCommentReport($postId) // supprimer un commentaire signalé
     {
     	$db = $this->dbConnect();
         $deleteComment = $db->prepare('DELETE FROM commentaires WHERE id = ?');

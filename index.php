@@ -100,7 +100,6 @@ try {
 // ADMIN
         if ($_GET['action'] == 'afficheAdmin') {
             afficheAdmin();
-
         }
         // Ajouter un nouveau billet
         if ($_GET['action'] == 'validNewPost') {
@@ -134,6 +133,12 @@ try {
             if (isset($_GET['id']) && $_GET['id'] > 0) { 
                 delete();
             }    
+        }
+        // Supprimer un commentaire signalé
+        elseif ($_GET['action']== 'deleteComment') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) { 
+                deleteComment();
+            } 
         }
     }
     else {

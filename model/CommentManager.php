@@ -3,15 +3,6 @@ require_once("model/Manager.php");
 
 class CommentManager extends Manager 
 {
-    // PAGE D'UN BILLET AVEC SES COMMENTAIRES
-    /*public function getComments($postId) // récupération des commentaires d'un billet
-    {
-        $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM commentaires WHERE post_id = ? ORDER BY comment_date DESC');
-        $comments->execute(array($postId));
-
-        return $comments;
-    }*/
     public function postComment($postId, $comment) // ajout d'un commentaire pour un billet 
     {
         $db = $this->dbConnect();

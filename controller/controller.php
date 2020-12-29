@@ -170,6 +170,14 @@ function delete() // Supprimer un billet
 	header('Location: index.php?action=afficheAdmin');
 }
 
+function deleteReport()
+{
+	$removeManager = new CommentManager();
+    $remove = $removeManager->removeReport($_GET['id']);
+
+	header('Location: index.php?action=afficheAdmin');
+}
+
 function deleteComment() // Supprimer un commentaire signalé
 {
 	$deleteManager = new CommentManager();

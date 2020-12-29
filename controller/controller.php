@@ -173,7 +173,7 @@ function delete() // Supprimer un billet
 function deleteComment() // Supprimer un commentaire signalé
 {
 	$deleteManager = new CommentManager();
-    $delete = $deleteManager->deleteComment($_GET['id']);
+    $delete = $deleteManager->deleteCommentReport($_GET['id']);
 
 	header('Location: index.php?action=afficheAdmin');
 }

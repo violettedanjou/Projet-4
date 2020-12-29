@@ -134,6 +134,12 @@ try {
                 delete();
             }    
         }
+        // Retirer le signalement d'un commentaire
+        elseif ($_GET['action']== 'deleteReport') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) { 
+                deleteReport();
+            }
+        }
         // Supprimer un commentaire signalé
         elseif ($_GET['action']== 'deleteComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) { 

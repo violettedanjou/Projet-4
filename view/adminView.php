@@ -47,7 +47,7 @@ while ($data = $admin->fetch())
 				<em>Le <?= $data['creation_date_fr'] ?></em>
 				<?= $data['id'] ?> <br/>
 				<?= nl2br(htmlspecialchars($data['comment'])) ?> <br/>
-				<em><a id="link-report-remove" href="index.php?action=removeReport&amp;id=<?= $data['id'] ?>">Retirer le signalement</a></em>
+				<em><a id="link-report-remove" href="index.php?action=deleteReport&amp;id=<?= $data['id'] ?>">Retirer le signalement</a></em>
 				<em><a id="link-delete-comment" href="index.php?action=deleteComment&amp;id=<?= $data['id'] ?>">Supprimer le commentaire</a></em>
 			</p>
 		</h4>

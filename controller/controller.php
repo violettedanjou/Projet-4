@@ -126,15 +126,10 @@ function afficheAdmin() // Afficher la page d'administrateur
 	$postManager = new PostManager(); 
     $posts = $postManager->getPosts();
 
-    require('view/adminView.php');
-}
-
-function afficheReport() // Afficher les commentaires signalés
-{
-	$adminManager = new CommentManager();
+    $adminManager = new CommentManager();
 	$admin = $adminManager->reportAdmin();
 
-	require('view/adminView.php');
+    require('view/adminView.php');
 }
 
 function afficheEdition() // Afficher formulaire pour ajout de nouveau billet 

@@ -1,4 +1,3 @@
-<!-- Classe parente pour la classe PostManager et CommentManager (héritage)-->
 <?php
 //namespace Applications\MAMP\htdocs\Test_TP\TP_commentaires\Model;
 

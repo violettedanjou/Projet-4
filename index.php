@@ -1,9 +1,9 @@
 <?php
 require('controller/controller.php');
 session_start();
-if (isset($_SESSION['pseudo'])) {
+/*if (isset($_SESSION['pseudo'])) {
     echo "Bonjour " . $_SESSION['pseudo'];
-}
+}*/
 
 try {
     if (isset($_GET['action'])) {
@@ -100,6 +100,7 @@ try {
 // ADMIN
         if ($_GET['action'] == 'afficheAdmin') {
             afficheAdmin();
+
         }
         // Ajouter un nouveau billet
         if ($_GET['action'] == 'validNewPost') {

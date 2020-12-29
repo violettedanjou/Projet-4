@@ -23,11 +23,11 @@ while ($data = $posts->fetch())
             </a>
         </h3>
         
-        <p id="links-edit-delete">
+        <p>
             <?= nl2br(htmlspecialchars($data['content'])) ?> <br/>
             
-	        <em><a href="index.php?action=afficheEdition&amp;id=<?= $data['id'] ?>">Modifier</a></em>
-			<em><a href="index.php?action=validDelete&amp;id=<?= $data['id'] ?>">Supprimer</a></em>
+	        <em><a id="link-edit" href="index.php?action=afficheEdition&amp;id=<?= $data['id'] ?>">Modifier</a></em>
+			<em><a id="link-delete" href="index.php?action=validDelete&amp;id=<?= $data['id'] ?>">Supprimer</a></em>
         </p>
     </div>
 <?php 
@@ -41,15 +41,17 @@ $posts->closeCursor();
 while ($data = $admin->fetch())
 {
 ?>
-
-	<div id="list_reports">
+	<div class="news">
 		<h4>
-			<em>le <?= $data['creation_date_fr'] ?></em>
-			<?= $data['comment_report'] ?><br/>
-			<p><?= nl2br(htmlspecialchars($data['comment'])) ?></p>
+			<p>
+				<em>Le <?= $data['creation_date_fr'] ?></em>
+				<?= $data['id'] ?> <br/>
+				<?= nl2br(htmlspecialchars($data['comment'])) ?> <br/>
+				<em><a id="link-report-remove" href="index.php?action=afficheEdition&amp;id=<?= $data['id'] ?>">Retirer le signalement</a></em>
+				<em><a id="link-delete-comment" href="index.php?action=validDelete&amp;id=<?= $data['id'] ?>">Supprimer le commentaire</a></em>
+			</p>
 		</h4>
 	</div>
-
 <?php
 }
 $admin->closeCursor();

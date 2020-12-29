@@ -107,9 +107,15 @@ h3
     width: 70%;
     margin: auto;
 }
-#link-comments a, #links-edit-delete a
+#link-comments a, a#link-delete, a#link-delete-comment
 {
     float: right;
+    margin-right: 10px;
+    color: #f08080;
+    font-weight: bold;
+}
+a#link-edit, a#link-report-remove
+{
     margin-right: 10px;
     color: #f08080;
     font-weight: bold;

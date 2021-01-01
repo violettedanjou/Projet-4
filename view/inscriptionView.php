@@ -2,7 +2,7 @@
 
 ob_start(); ?>
 
-<h1>Inscription</h1>
+<h1>INSCRIPTION</h1>
 <div id="form-inscription">
 	<form action="index.php?action=validInscription" method="post">
 		<label for="pseudo">Pseudo :</label><input type="text" name="pseudo" required class="input-inscription" /><br/>

@@ -2,7 +2,7 @@
 
 ob_start(); ?>
 
-<h1>Page de connexion</h1>
+<h1>PAGE DE CONNEXION</h1>
 
 <div id="form-connexion">
 	<form action="index.php?action=validConnection" method="post">

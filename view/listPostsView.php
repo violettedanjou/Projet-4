@@ -2,7 +2,7 @@
 <?php $title = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
+<h1 id="h1-accueil">Billet simple pour l'Alaska</h1>
 <p id="p-listPosts">Derniers billets du blog : <br/>
 </p>
 

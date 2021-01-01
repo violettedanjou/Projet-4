@@ -15,7 +15,7 @@
         <header>
 		    	<div>
 		    		<a href="index.php">
-						<img id="logo" src="public/logoBlog.png" alt="Logo du blog"/>
+						<img id="logo" src="public/logo.png" alt="Logo du blog"/>
 					</a>
 				</div>
 				

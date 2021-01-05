@@ -14,7 +14,7 @@
         <header>
 		    	<div id="forteroche">
 		    		<a href="index.php">
-						JEAN FORTEROCHE<!-- <img id="logo" src="public/logo.png" alt="Logo du blog"/> -->
+						JEAN FORTEROCHE
 					</a>
 				</div>
 				

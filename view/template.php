@@ -10,7 +10,6 @@
         <link href="public/commentaires.css" rel="stylesheet" /> 
     </head>
      
-    <div id="voile">  
     <body>
         <header>
 		    	<div>
@@ -39,5 +38,4 @@
 		</header>
 		<?= $content ?>
     </body>
-    </div> 
 </html>

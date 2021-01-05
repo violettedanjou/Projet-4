@@ -34,10 +34,11 @@ class CommentManager extends Manager
 
     	return $req;
     }
-    public function removeReport() // retirer le signalement d'un commentaire
+    public function removeReport($id) // retirer le signalement d'un commentaire
     {
     	$db = $this->dbConnect();
-    	$req = $db->prepare('SELECT id, post_id, author, comment, report, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM commentaires WHERE id = ?');
+    	$req = $db->prepare('UPDATE commentaires SET report = 0 WHERE id = ?');
+        $req->execute(array($id));
 
     	return $req;
     }

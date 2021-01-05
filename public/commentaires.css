@@ -2,18 +2,12 @@
 body
 {
     margin: 0px;
-    background-image: url("http://localhost:8888/Test_TP/TP_commentaires/public/alaska1.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                  url("http://localhost:8888/Test_TP/TP_commentaires/public/alaska1.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     padding-bottom: 50px;
-}
-#voile
-{
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.4);
-    width: 100%;
-    height: auto;
 }
 header
 {

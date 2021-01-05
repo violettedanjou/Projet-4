@@ -44,7 +44,7 @@ class PostManager extends Manager
     public function modifPost($id, $title, $content) // modification d'un  billet
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE billets SET title = ?, content = ?, creation_date = NOW() WHERE id = ?');
+        $req = $db->prepare('UPDATE billets SET title = ?, content = ? WHERE id = ?');
         $req->execute(array($title, $content, $id));
 
         return $req;

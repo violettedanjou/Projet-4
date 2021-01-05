@@ -99,7 +99,12 @@ try {
 
 // ADMIN
         if ($_GET['action'] == 'afficheAdmin') {
-            afficheAdmin();
+            if (($_SESSION['admin'] == 1)) {
+                afficheAdmin();
+            }
+            else {
+                throw new Exception("Cette partie est réservée à l'administrateur", 1);
+            } 
         }
         // Ajouter un nouveau billet
         if ($_GET['action'] == 'validNewPost') {

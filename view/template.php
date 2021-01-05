@@ -12,9 +12,9 @@
      
     <body>
         <header>
-		    	<div>
+		    	<div id="forteroche">
 		    		<a href="index.php">
-						<img id="logo" src="public/logo.png" alt="Logo du blog"/>
+						JEAN FORTEROCHE<!-- <img id="logo" src="public/logo.png" alt="Logo du blog"/> -->
 					</a>
 				</div>
 				

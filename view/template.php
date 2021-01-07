@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr-fr">
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
@@ -37,9 +37,10 @@
 				</nav>
 		</header>
 		<?= $content ?>
-    </body>
+    
+	    <footer>
+	    	<p> Copyright © Violette Danjou - 2021. Tous droits réservés</p>
+	    </footer>
 
-    <footer>
-    	<p> Copyright © Violette Danjou - 2020. Tous droits réservés</p>
-    </footer>
+    </body>
 </html>

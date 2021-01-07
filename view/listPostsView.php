@@ -3,7 +3,7 @@
 
 <?php ob_start(); ?>
 <h1 id="h1-accueil">Billet simple pour l'Alaska</h1>
-<p id="p-listPosts">Derniers billets du blog : <br/>
+<p id="p-listPosts">Les derniers chapitres : <br/>
 </p>
 
 

@@ -38,4 +38,8 @@
 		</header>
 		<?= $content ?>
     </body>
+
+    <footer>
+    	<p> Copyright © Violette Danjou - 2020. Tous droits réservés</p>
+    </footer>
 </html>

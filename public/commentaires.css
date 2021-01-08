@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'Redressed', cursive;
+}
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
 /* Menu */
 body
 {
@@ -105,7 +109,7 @@ h1
     text-align: center;
     color: #ffffff;
     text-decoration: underline;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Redressed', cursive;
 }
 #h1-accueil
 {

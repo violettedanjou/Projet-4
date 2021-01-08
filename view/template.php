@@ -2,12 +2,14 @@
 <html lang="fr-fr">
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- Police -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"> <!-- Icones -->
+        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> 
   		<script>tinymce.init({selector:'textarea'});</script>
-
+  		
+		<link href="public/commentaires.css" rel="stylesheet" /> 
         <title><?= $title ?></title>
-        <link href="public/commentaires.css" rel="stylesheet" /> 
+        
     </head>
      
     <body>

@@ -74,9 +74,9 @@
 	<?php
 	}
 	?>
-
-	<?php $content = ob_get_clean(); ?>
 </div>
+
+<?php $content = ob_get_clean(); ?>
 
 <?php require('view/template.php'); ?>
 

@@ -4,6 +4,7 @@
 /* Menu */
 body
 {
+    position: relative;
     margin: 0px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                   url("http://localhost:8888/Test_TP/TP_commentaires/public/alaskabackground.jpg");
@@ -11,6 +12,8 @@ body
     background-attachment: fixed;
     background-size: cover;
     padding-top: 140px;
+
+    min-height: 100vh;
 }
 #forteroche a
 {
@@ -277,6 +280,9 @@ h2
 /* Footer */
 footer 
 {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

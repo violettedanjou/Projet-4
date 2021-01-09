@@ -41,8 +41,9 @@
 					</ul>
 				</nav>
 		</header>
-		<?= $content ?>
-    
+		
+    	<?= $content ?>
+    	
 	    <footer>
 	    	<p> Copyright © Violette Danjou - 2021. Tous droits réservés</p>
 	    </footer>

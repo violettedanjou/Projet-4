@@ -19,11 +19,9 @@ while ($data = $posts->fetch())
             <em>le <?= $data['creation_date_fr'] ?></em>
         </h3>
         
-        
         <?= nl2br(($data['content'])) ?>
            
-        <em id="link-comments"><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
-        
+        <em class="link-comments"><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
     </div>
 <?php
 }

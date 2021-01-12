@@ -157,12 +157,13 @@ h4
     width: 70%;
     margin: auto;
 }
-#link-comments a, a#link-delete, a#link-delete-comment
+.link-comments a, a#link-delete, a#link-delete-comment
 {
     float: right;
     margin-right: 10px;
     color: #ac399a;
     font-weight: bold;
+    font-style: italic;
 }
 a#link-edit, a#link-report-remove
 {

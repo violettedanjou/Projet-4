@@ -23,9 +23,7 @@
         <em>le <?= $post['creation_date_fr'] ?></em>
     </h3>
     
-    
-        <?= nl2br(($post['content'])) ?>
-    
+    <?= nl2br(($post['content'])) ?>
 </div>
 
 <div id="div-comments">

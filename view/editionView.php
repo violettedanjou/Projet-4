@@ -24,7 +24,7 @@ ob_start(); ?>
 </div>
 
 <div id="form-edition">
-	<form action="index.php?action=validEdition" method="POST">
+	<form action="index.php?action=afficheEdition" method="POST">
 		<input type="hidden" name="id" value="<?= $edit['id']?>">
       	<input id="title-edition" type="text" name="title" value="<?= $edit['title']?>"/><br/>
      	<textarea id="content-edition" name="content"><?= $edit['content']?></textarea><br/>

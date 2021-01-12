@@ -98,6 +98,7 @@ try {
         }
 
 // ADMIN
+        // Afficher la page administration
         if ($_GET['action'] == 'afficheAdmin') {
             if ((isset($_SESSION['admin'])) AND ($_SESSION['admin'] == 1)) {
                 afficheAdmin();
@@ -108,47 +109,82 @@ try {
         }
         // Ajouter un nouveau billet
         if ($_GET['action'] == 'validNewPost') {
-
-            if (isset($_POST['title']) AND isset($_POST['content'])) {
+            if ((isset($_SESSION['admin'])) AND ($_SESSION['admin'] == 1)) {
+                if (isset($_POST['title']) AND isset($_POST['content'])) {
                 addPost();
-            }
-            else {
-                throw new Exception("Veuillez ajouter un nouveau billet.", 1);
+                }
+                else {
+                    throw new Exception("Veuillez ajouter un nouveau billet.", 1);
+                }
             } 
+            else {
+                throw new Exception("Vous ne pouvez pas accéder à cette page.", 1);    
+            }      
         }
         elseif ($_GET['action'] == 'afficheNewPost') {
-            afficheEdition();
-        }
-        // Modfier un billet
-        elseif($_GET['action'] == 'afficheEdition') {
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                editPosts();
+            if ((isset($_SESSION['admin'])) AND ($_SESSION['admin'] == 1)) {
+               afficheEdition(); 
             }
             else {
-                throw new Exception("Aucun identifiant de billet envoyé.", 1);
-            } 
+                throw new Exception("Vous ne pouvez pas accéder à cette page.", 1);
+            }
         }
-        elseif ($_GET['action'] == 'validEdition') {
-            if (isset($_POST['id']) && (isset($_POST['title'])) && (isset($_POST['content']))) {
+        // Afficher formulaire de modification
+        elseif ($_GET['action'] == 'afficheEdition') {
+            if ((isset($_SESSION['admin'])) AND ($_SESSION['admin'] == 1)) {
+               if (isset($_POST['id']) && (isset($_POST['title'])) && (isset($_POST['content']))) {
                 savePosts();
+                } 
+            }
+            else {
+                throw new Exception("Vous ne pouvez pas accéder à cette page.", 1);
+            }
+        }        
+        // Modfier un billet
+        elseif($_GET['action'] == 'validEdition') {
+            if ((isset($_SESSION['admin'])) AND ($_SESSION['admin'] == 1)) {
+               if (isset($_GET['id']) && $_GET['id'] > 0) {
+                editPosts();
+                }
+                else {
+                    throw new Exception("Aucun identifiant de billet envoyé.", 1);
+                } 
+            }
+            else {
+                throw new Exception("Vous ne pouvez pas accéder à cette page.", 1);
             }
         }
         // Supprimer un billet
         elseif ($_GET['action'] == 'validDelete') {
-            if (isset($_GET['id']) && $_GET['id'] > 0) { 
+            if ((isset($_SESSION['admin'])) AND ($_SESSION['admin'] == 1)) {
+               if (isset($_GET['id']) && $_GET['id'] > 0) { 
                 delete();
-            }    
+                } 
+            }
+            else {
+                throw new Exception("Vous ne pouvez pas accéder à cette page.", 1);
+            }   
         }
         // Retirer le signalement d'un commentaire
         elseif ($_GET['action'] == 'deleteReport') {
-            if (isset($_GET['id']) && $_GET['id'] > 0) { 
+            if ((isset($_SESSION['admin'])) AND ($_SESSION['admin'] == 1)) {
+               if (isset($_GET['id']) && $_GET['id'] > 0) { 
                 deleteReport();
+                } 
+            }
+            else {
+                throw new Exception("Vous ne pouvez pas accéder à cette page.", 1);
             }
         }
         // Supprimer un commentaire signalé
         elseif ($_GET['action'] == 'deleteComment') {
-            if (isset($_GET['id']) && $_GET['id'] > 0) { 
+            if ((isset($_SESSION['admin'])) AND ($_SESSION['admin'] == 1)) {
+               if (isset($_GET['id']) && $_GET['id'] > 0) { 
                 deleteComment();
+                } 
+            }
+            else {
+                throw new Exception("Vous ne pouvez pas accéder à cette page.", 1);
             } 
         }
     }

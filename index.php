@@ -99,7 +99,7 @@ try {
 
 // ADMIN
         if ($_GET['action'] == 'afficheAdmin') {
-            if (($_SESSION['admin'] == 1)) {
+            if ((isset($_SESSION['admin'])) AND ($_SESSION['admin'] == 1)) {
                 afficheAdmin();
             }
             else {

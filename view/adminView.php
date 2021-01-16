@@ -22,13 +22,11 @@ while ($data = $posts->fetch())
             	<em>le <?= $data['creation_date_fr'] ?></em>
             </a>
         </h3>
-        
-        <p>
-            <?= nl2br(htmlspecialchars($data['content'])) ?> <br/>
+
+        <?= nl2br($data['content']) ?> <br/>
             
-	        <em><a id="link-edit" href="index.php?action=validEdition&amp;id=<?= $data['id'] ?>">Modifier</a></em>
-			<em><a id="link-delete" href="index.php?action=validDelete&amp;id=<?= $data['id'] ?>">Supprimer</a></em>
-        </p>
+	    <em><a id="link-edit" href="index.php?action=validEdition&amp;id=<?= $data['id'] ?>">Modifier</a></em>
+		<em><a id="link-delete" href="index.php?action=validDelete&amp;id=<?= $data['id'] ?>">Supprimer</a></em>
     </div>
 <?php 
 } 

@@ -152,19 +152,23 @@ h4
 .news p
 {
     margin-top: 0px;
-    padding: 10px 0px 25px 10px;
+    padding: 10px 0px 0px 10px;
     background-color: #ffffff;
-    border-radius: 0px 0px 5px 5px;
 }
 .news
 {
     width: 70%;
     margin: auto;
+    padding-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
 }
 .link-comments a, a#link-delete, a#link-delete-comment
 {
     float: right;
     margin-right: 10px;
+    background-color: #ffffff;
+    border-radius: 0px 0px 5px 5px;
     color: #ac399a;
     font-weight: bold;
     font-style: italic;

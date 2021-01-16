@@ -16,34 +16,35 @@
     </head>
      
     <body>
-        <header>
-		    	<div id="forteroche">
-		    		<a href="index.php">
-						JEAN FORTEROCHE
-					</a>
-				</div>
-				
-				<nav>
-					<ul>
-						<?php if(isset($_SESSION['pseudo'])) { ?>	
-							<li class="li" id="button_deconnexion"><a href="index.php?action=validDeconnexion">DECONNEXION</a></li>
+    	<div class="wrap">
+	        <header>
+			    	<div id="forteroche">
+			    		<a href="index.php">
+							JEAN FORTEROCHE
+						</a>
+					</div>
+					
+					<nav>
+						<ul>
+							<?php if(isset($_SESSION['pseudo'])) { ?>	
+								<li class="li" id="button_deconnexion"><a href="index.php?action=validDeconnexion">DECONNEXION</a></li>
 
-							<?php if($_SESSION['admin'] != 0) { ?>
-								<li class="li" id="button_admin"><a href="index.php?action=afficheAdmin">ADMINISTRATION</a></li>
-							<?php }
-						}
-						
-						else { 
-						?> 
-							<li class="li" id="button_inscription"><a href="index.php?action=afficheInscription">CREER UN COMPTE</a></li>
-							<li class="li" id="button_connexion"><a href="index.php?action=afficheConnection">CONNEXION</a></li>
-						<?php }?>
-					</ul>
-				</nav>
-		</header>
-		
-    	<?= $content ?>
-    	
+								<?php if($_SESSION['admin'] != 0) { ?>
+									<li class="li" id="button_admin"><a href="index.php?action=afficheAdmin">ADMINISTRATION</a></li>
+								<?php }
+							}
+							
+							else { 
+							?> 
+								<li class="li" id="button_inscription"><a href="index.php?action=afficheInscription">CREER UN COMPTE</a></li>
+								<li class="li" id="button_connexion"><a href="index.php?action=afficheConnection">CONNEXION</a></li>
+							<?php }?>
+						</ul>
+					</nav>
+			</header>
+			
+	    	<?= $content ?>
+    	</div>
 	    <footer>
 	    	<p> Copyright © Violette Danjou - 2021. Tous droits réservés</p>
 	    </footer>

@@ -1,6 +1,4 @@
 <?php
-//namespace Applications\MAMP\htdocs\Test_TP\TP_commentaires\Model;
-
 class Manager
 {
     protected function dbConnect() // si on utilise "private", les fonctions filles dans PostManager et CommentManager n'auraient pas pu l'appeler. Le type protected est identique à private, mais il autorise quand même les classes filles à appeler la fonction. 

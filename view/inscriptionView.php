@@ -13,5 +13,5 @@ ob_start(); ?>
 	</form>
 </div>
 <?php $content = ob_get_clean(); 
-require('template.php'); //grace à cette instruction on va pouvoir avoir notre menu sur toutes les pages de notre site
+require('template.php'); // grace à cette instruction on va pouvoir avoir notre menu sur toutes les pages de notre site
 ?>

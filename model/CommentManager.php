@@ -19,7 +19,7 @@ class CommentManager extends Manager
 
     	return $pseudoComment;
     }
-    public function reportComment($id) //signaler un commentaire
+    public function reportComment($id) // signaler un commentaire
     {
         $db = $this->dbConnect();
         $report = $db->prepare('UPDATE commentaires SET report = 1 WHERE id = ?');

@@ -1,18 +1,17 @@
 <?php
 require('controller/controller.php');
 session_start();
-/*if (isset($_SESSION['pseudo'])) {
-    echo "Bonjour " . $_SESSION['pseudo'];
-}*/
 
 try {
     if (isset($_GET['action'])) {
 
 // PAGE INSCRIPTION
-        if ($_GET['action'] == 'afficheInscription') { // on affiche le formulaire
+        // on affiche le formulaire
+        if ($_GET['action'] == 'afficheInscription') { 
             afficheInscription();        
         }
-        elseif ($_GET['action'] == 'validInscription') { // on traite le formulaire 
+        // on traite le formulaire
+        elseif ($_GET['action'] == 'validInscription') {  
             if ((isset($_POST['pseudo']) AND (strlen($_POST['pseudo']) != 0))) {
 
                 if ((isset($_POST['pass']) == isset($_POST['pass_confirm']))) {
@@ -42,9 +41,9 @@ try {
 
 // PAGE CONNEXION
         if ($_GET['action'] == 'validConnection') {
-
+            // mdp ok avec mdp de la bdd donc on appelle fonction connect()
             if (isset($_POST['pseudo']) AND isset($_POST['pass'])) {
-                connect(); // mdp ok avec mdp de la bdd donc on appelle fonction connect()
+                connect(); 
             }
             else {
                 throw new Exception("Veuillez entrer votre pseudo.", 1);
@@ -60,10 +59,12 @@ try {
         }
 
 // BILLETS 
+        //affiche la listes des billets
         elseif ($_GET['action'] == 'listPosts') {
-            listPosts(); //affiche la listes des billets
+            listPosts(); 
         }
-        elseif ($_GET['action'] == 'post') { // afficher un billet 
+        // afficher un billet 
+        elseif ($_GET['action'] == 'post') { 
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                     post();             
             }
@@ -72,8 +73,8 @@ try {
             }
         }
 
-
-        elseif ($_GET['action'] == 'addComment') { // ajouter un commentaire
+        // ajouter un commentaire
+        elseif ($_GET['action'] == 'addComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {
                     if (!empty($_POST['comment'])) {
@@ -91,8 +92,8 @@ try {
                 throw new Exception("Aucun identifiant de billet envoyé");
             }
         }
-
-        elseif ($_GET['action'] == 'validReport') { // signaler un commentaire
+        // signaler un commentaire
+        elseif ($_GET['action'] == 'validReport') { 
                     report();
                     echo "Commentaire signalé";
         }

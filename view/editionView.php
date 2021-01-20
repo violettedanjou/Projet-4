@@ -19,7 +19,7 @@ ob_start(); ?>
     </h3>
 	    
 	<p>
-	    <?= nl2br(htmlspecialchars($edit['content'])) ?>
+	    <?= nl2br($edit['content']) ?>
 	</p>
 </div>
 

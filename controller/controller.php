@@ -21,7 +21,8 @@ function insert()
 	    header('Location: index.php');	
 	}
 	else {
-		echo "Le pseudo est déjà utilisé. Essayez autre chose.";
+		throw new Exception("Le pseudo est déjà utilisé. Essayez autre chose.", 1);
+        ;
 	}
 }
 
@@ -57,7 +58,6 @@ function connect()
 }
 
 
-
 //PAGE DECONNEXION
 function disconnection() // Suppression des variables de session et de la session
 {
@@ -65,7 +65,6 @@ function disconnection() // Suppression des variables de session et de la sessio
 	session_destroy();
 	header('Location: index.php');
 }
-
 
 
 // LISTE DES BILLETS
@@ -170,7 +169,7 @@ function delete() // Supprimer un billet
 	header('Location: index.php?action=afficheAdmin');
 }
 
-function deleteReport()
+function deleteReport() // Retirer le signalement
 {
 	$removeManager = new CommentManager();
     $remove = $removeManager->removeReport($_GET['id']);

@@ -41,8 +41,8 @@
 	<?php 
 	}
 	else {
-		echo "Veuillez vous connecter pour ajouter un commentaire.";
-	}
+		throw new Exception("Veuillez vous connecter pour ajouter un commentaire.", 1);
+		}
 
 	while ($comment = $comments->fetch())
 	{
@@ -64,8 +64,8 @@
 		<?php 
 		}
 		else {
-		 	echo "Veuillez vous connecter pour signaler ce commentaire.";
-		}
+			throw new Exception("Veuillez vous connecter pour signaler ce commentaire.", 1);
+			}
 		?>
 		</div>
 

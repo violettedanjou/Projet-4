@@ -32,7 +32,7 @@
 	<?php 	if (isset($_SESSION['id'])) { ?>
 				<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
 				    <div>
-				        <label for="comment">Commentaire</label><br /><textarea id="comment" name="comment"></textarea>
+				        <label for="comment"></label><br /><textarea id="comment" name="comment"></textarea>
 				    </div>
 				    <div>
 				        <input type="submit" id="button_add_comment" />

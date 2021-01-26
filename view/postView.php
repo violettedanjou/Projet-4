@@ -54,7 +54,7 @@
 		    </h4>
 
 		    <p>
-		    	<?= nl2br(htmlspecialchars($comment['comment'])) ?>
+		    	<?= nl2br(($comment['comment'])) ?>
 		    </p>
 		
 

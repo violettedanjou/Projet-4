@@ -179,8 +179,8 @@ a#link-edit, a#link-report-remove
     color: #ac399a;
     font-weight: bold;
 }
-/* Mise en forme commentaires */
-#btn_return_listPosts a, #btn_return_admin_page a
+/* Mise en forme commentaires 
+#btn_return_listPosts a, #btn_return_admin_page a, #btn_return_connection_page a
 {
     margin-left: 20px;
     padding: 5px;
@@ -191,15 +191,29 @@ a#link-edit, a#link-report-remove
     font-weight: bold;
     text-decoration: none;
 }
-#btn_return_listPosts a:hover, #btn_return_admin_page a:hover
+#btn_return_listPosts a:hover, #btn_return_admin_page a:hover, #btn_return_connection_page a:hover
 {
     background-color: #ffffff;
     color: #213800;
     font-weight: bold;
-}
-.fa-arrow-left
+}*/
+.fa-arrow-left 
 {
     margin: 3px;
+    margin-left: 20px;
+    padding: 5px;
+    border: 1px solid #213800;
+    border-radius: 5px;
+    background-color: #213800;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+.fa-arrow-left:hover
+{
+    background-color: #ffffff;
+    color: #213800;
+    font-weight: bold;
 }
 #div-comments
 {
@@ -245,7 +259,7 @@ h2
 {
     color: blue;
 }
-/* PAGE INSCRIPTION */
+/* PAGE INSCRIPTION et CONNEXION */
 #form-inscription, #form-connexion
 {
     
@@ -291,6 +305,24 @@ h2
     width: 500px;
     height: 200px;
 }
+/* PAGE DES ERREURS */
+#div-error
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px 30% 50px 30%;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000000;
+}
+#btn_return_connection_page 
+{
+    text-align: center;
+}
+
 /* Footer */
 footer 
 {

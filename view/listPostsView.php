@@ -26,7 +26,7 @@ while ($data = $posts->fetch())
 <?php
 }
 $posts->closeCursor();
-?>
-<?php $content = ob_get_clean(); // On récupère le code HTML, avec ob_start() et ob_get_clean(), et on le met dans la variable $content qui s'affichera dans le template.php
+
+$content = ob_get_clean(); // On récupère le code HTML, avec ob_start() et ob_get_clean(), et on le met dans la variable $content qui s'affichera dans le template.php
 
 require('view/template.php'); ?>

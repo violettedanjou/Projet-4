@@ -29,22 +29,23 @@
 <div id="div-comments">
 	<h2>Commentaires</h2>
 
-	<?php if (isset($_SESSION['id'])) { ?>
-		<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-		    <div>
-		        <label for="comment">Commentaire</label><br /><textarea id="comment" name="comment"></textarea>
-		    </div>
-		    <div>
-		        <input type="submit" id="button_add_comment" />
-		    </div>
-		</form>	
-	<?php 
-	}
-	else {
-		throw new Exception("Veuillez vous connecter pour ajouter un commentaire.", 1);
-		}
+	<?php 	if (isset($_SESSION['id'])) { ?>
+				<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+				    <div>
+				        <label for="comment">Commentaire</label><br /><textarea id="comment" name="comment"></textarea>
+				    </div>
+				    <div>
+				        <input type="submit" id="button_add_comment" />
+				    </div>
+				</form>	
+	<?php 	}
+	
+			else {
+				throw new Exception("Veuillez vous connecter pour ajouter un commentaire.", 1);
+			} 
 
-	while ($comment = $comments->fetch())
+/* Commentaires affichés une fois connecté */
+	while ($comment = $comments->fetch()) 
 	{
 	?>
 		<div id="news">
@@ -57,25 +58,24 @@
 		    </p>
 		
 
-		<?php if (isset($_SESSION['id'])) { ?>
-			<div id="button-report">
-	    		<a  href="index.php?action=validReport&amp;id=<?= $comment['id'] ?>&amp;post_id=<?= $post['id']?>">Signaler</a>
-	    	</div>
-		<?php 
-		}
-		else {
-			throw new Exception("Veuillez vous connecter pour signaler ce commentaire.", 1);
-			}
-		?>
+		<?php 	if (isset($_SESSION['id'])) { ?>
+					<div id="button-report">
+			    		<a  href="index.php?action=validReport&amp;id=<?= $comment['id'] ?>&amp;post_id=<?= $post['id']?>">Signaler</a>
+			    	</div>
+		<?php 	} 
+				
+				else {
+					throw new Exception("Veuillez vous connecter pour signaler ce commentaire.", 1);
+				}
+				?>
 		</div>
-
 	<?php
 	}
 	?>
 </div>
 
-<?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean();
 
-<?php require('view/template.php'); ?>
+require('view/template.php'); ?>
 
 

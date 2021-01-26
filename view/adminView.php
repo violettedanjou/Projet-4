@@ -46,7 +46,7 @@ while ($data = $admin->fetch())
         </h4>
 
 		<p>
-			<?= nl2br(htmlspecialchars($data['comment'])) ?> <br/>
+			<?= nl2br(($data['comment'])) ?> <br/>
 			<em><a id="link-report-remove" href="index.php?action=deleteReport&amp;id=<?= $data['id'] ?>">Retirer le signalement</a></em>
 			<em><a id="link-delete-comment" href="index.php?action=deleteComment&amp;id=<?= $data['id'] ?>">Supprimer le commentaire</a></em>
 		</p>

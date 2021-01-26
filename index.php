@@ -63,7 +63,7 @@ try {
         elseif ($_GET['action'] == 'listPosts') {
             listPosts(); 
         }
-        // afficher un billet 
+        // afficher un billet et ses commentaires
         elseif ($_GET['action'] == 'post') { 
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                     post();             

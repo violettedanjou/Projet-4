@@ -194,8 +194,6 @@ try {
     }
 }
 catch(Exception $e) {
-    //echo "Erreur : " . $e->getMessage();
-    /*$errorMessage = $e->getMessage();*/
     require('view/errorView.php');
 }
 

@@ -86,8 +86,6 @@ function post()
 
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->pseudoAuthor($_GET['id']);
-    /*var_dump(htmlspecialchars($post['title']));
-    die(var_dump($post));*/
 
     require('view/postView.php');
 }

@@ -4,7 +4,7 @@ ob_start(); ?>
 
 <h1>Nouveau billet</h1>
 
-<p id="btn_return_admin_page">
+<p class="btn_return_admin_page">
 	<a href="index.php?action=afficheAdmin">
 		<i class="fas fa-arrow-left"></i>Retour
 	</a>

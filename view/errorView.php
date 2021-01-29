@@ -7,7 +7,7 @@ ob_start(); ?>
 	echo "" . $e->getMessage();
 	?> 
 	<br/>
-	<a href="index.php?action=afficheConnection" id="btn_return_connection_page">
+	<a href="index.php" id="btn_return_connection_page">
 		<i class="fas fa-arrow-left"></i>Retour
 	</a>
 </div>

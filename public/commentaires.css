@@ -180,7 +180,7 @@ a#link-edit, a#link-report-remove
     font-weight: bold;
 }
 /* Mise en forme commentaires */
-#btn_return_listPosts a, #btn_return_admin_page a, #btn_return_connection_page a
+#btn_return_listPosts a, #btn_return_admin_page a, #btn_return_connection_page a, a#btn_return_connection_page 
 {
     margin-left: 20px;
     padding: 5px;
@@ -191,7 +191,7 @@ a#link-edit, a#link-report-remove
     font-weight: bold;
     text-decoration: none;
 }
-#btn_return_listPosts a:hover, #btn_return_admin_page a:hover, #btn_return_connection_page a:hover
+#btn_return_listPosts a:hover, #btn_return_admin_page a:hover, #btn_return_connection_page a:hover, a#btn_return_connection_page:hover
 {
     background-color: #ffffff;
     color: #213800;
@@ -309,10 +309,6 @@ h2
     border-radius: 10px;
     box-shadow: 0px 0px 10px #000000;
 }
-#btn_return_connection_page 
-{
-    text-align: center;
-}
 
 /* Footer */
 footer 
@@ -320,7 +316,7 @@ footer
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 110px;
     border-radius: 5px 5px 0px 0px;
     box-shadow: 0px 0px 7px #000000;
     background-color: rgba(255, 255, 255, 0.7);

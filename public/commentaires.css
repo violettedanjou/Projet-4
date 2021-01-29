@@ -179,7 +179,7 @@ a#link-edit, a#link-report-remove
     color: #ac399a;
     font-weight: bold;
 }
-/* Mise en forme commentaires 
+/* Mise en forme commentaires */
 #btn_return_listPosts a, #btn_return_admin_page a, #btn_return_connection_page a
 {
     margin-left: 20px;
@@ -196,24 +196,10 @@ a#link-edit, a#link-report-remove
     background-color: #ffffff;
     color: #213800;
     font-weight: bold;
-}*/
+}
 .fa-arrow-left 
 {
     margin: 3px;
-    margin-left: 20px;
-    padding: 5px;
-    border: 1px solid #213800;
-    border-radius: 5px;
-    background-color: #213800;
-    color: #ffffff;
-    font-weight: bold;
-    text-decoration: none;
-}
-.fa-arrow-left:hover
-{
-    background-color: #ffffff;
-    color: #213800;
-    font-weight: bold;
 }
 #div-comments
 {

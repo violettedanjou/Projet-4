@@ -5,16 +5,16 @@
 <h1>Billet simple pour l'Alaska</h1>
 
 <p id="btn_return_listPosts">
-	<?php if(isset($_SESSION['admin']) && ($_SESSION['admin'] != 0)) { ?>
-		<a href="index.php?action=afficheAdmin">
-			<i class="fas fa-arrow-left"></i>Retour
-		</a>
-	<?php }
-	elseif(isset($_SESSION['pseudo'])) { ?>
-		<a href="index.php">
-			<i class="fas fa-arrow-left"></i>Retour
-		</a>
-	<?php } ?>
+	<?php 	if(isset($_SESSION['admin']) && ($_SESSION['admin'] != 0)) { ?>
+				<a href="index.php?action=afficheAdmin">
+					<i class="fas fa-arrow-left"></i>Retour
+				</a>
+	<?php 	}
+			else { ?>
+				<a href="index.php">
+					<i class="fas fa-arrow-left"></i>Retour
+				</a>
+	<?php	} ?>			
 </p>
 
 <div class="news">

@@ -10,7 +10,7 @@
         <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> 
   		
 
-		<link href="public/commentaires.css" rel="stylesheet" /> 
+		<link href="public/style.css" rel="stylesheet" /> 
         <title><?= $title ?></title>
         
     </head>
@@ -49,7 +49,7 @@
 	    <footer>
 	    	<p> Copyright © Violette Danjou - 2021. Tous droits réservés</p>
 	    </footer>
-	    
+
 	    <script>tinymce.init({selector:'textarea'});</script>
     </body>
 </html>

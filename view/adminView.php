@@ -25,8 +25,8 @@ while ($data = $posts->fetch())
 
         <?= nl2br($data['content']) ?> <br/>
             
-	    <em><a id="link-edit" href="index.php?action=validEdition&amp;id=<?= $data['id'] ?>">Modifier</a></em>
-		<em><a id="link-delete" href="index.php?action=validDelete&amp;id=<?= $data['id'] ?>">Supprimer</a></em>
+	    <em><a class="link-edit" href="index.php?action=validEdition&amp;id=<?= $data['id'] ?>">Modifier</a></em>
+		<em><a class="link-delete" href="index.php?action=validDelete&amp;id=<?= $data['id'] ?>">Supprimer</a></em>
     </div>
 <?php 
 } 
@@ -47,8 +47,8 @@ while ($data = $admin->fetch())
 
 		<p>
 			<?= nl2br(($data['comment'])) ?> <br/>
-			<em><a id="link-report-remove" href="index.php?action=deleteReport&amp;id=<?= $data['id'] ?>">Retirer le signalement</a></em>
-			<em><a id="link-delete-comment" href="index.php?action=deleteComment&amp;id=<?= $data['id'] ?>">Supprimer le commentaire</a></em>
+			<em><a class="link-report-remove" href="index.php?action=deleteReport&amp;id=<?= $data['id'] ?>">Retirer le signalement</a></em>
+			<em><a class="link-delete-comment" href="index.php?action=deleteComment&amp;id=<?= $data['id'] ?>">Supprimer le commentaire</a></em>
 		</p>
 
 	</div>

@@ -4,7 +4,7 @@ ob_start(); ?>
 
 <h1>Modification</h1>
 
-<p id="btn_return_admin_page">
+<p class="btn_return_admin_page">
 	<a href="index.php?action=afficheAdmin">
 		<i class="fas fa-arrow-left"></i>Retour
 	</a>
@@ -26,10 +26,10 @@ ob_start(); ?>
 <div id="form-edition">
 	<form action="index.php?action=afficheEdition" method="POST">
 		<input type="hidden" name="id" value="<?= $edit['id']?>">
-      	<input id="title-edition" type="text" name="title" value="<?= $edit['title']?>"/><br/>
-     	<textarea id="content-edition" name="content"><?= $edit['content']?></textarea><br/>
-      	<input type="submit" value="Enregistrer" id="button-edit-post" />
-    </form>
+    <input id="title-edition" type="text" name="title" value="<?= $edit['title']?>"/><br/>
+    <textarea id="content-edition" name="content"><?= $edit['content']?></textarea><br/>
+    <input type="submit" value="Enregistrer" id="button-edit-post" />
+  </form>
 </div>
 
 <?php $content = ob_get_clean(); 

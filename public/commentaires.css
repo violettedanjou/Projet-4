@@ -9,7 +9,7 @@ body
 {
     margin: 0px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                  url("http://localhost:8888/Test_TP/TP_commentaires/public/alaskabackground.jpg");
+        url("http://localhost:8888/Test_TP/TP_commentaires/public/alaskabackground.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -22,7 +22,7 @@ body
     min-height: calc(100% - 222px);
 }
 
-/* Menu */
+/* MENU */
 #forteroche a
 {
     margin-left: 20px;
@@ -87,34 +87,14 @@ li
 {
     color: #ffffff;
 }
-#button_inscription
-{
-    border: 1px solid #ffffff;
-    border-radius: 20px;
-    margin-right: 20px;
-    padding: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-#button_inscription:hover
-{
-    background-color: rgba(255, 255, 255, 0.1);
-}
-#button_connexion:hover
-{
-    text-decoration: underline;
-}
-#button_deconnexion:hover, #button_admin:hover
-{
-    text-decoration: underline;
-}
-/* Mise en forme des billets */
+
+/* PAGE DES BILLETS */
 #p-listPosts
 {
     margin-left: 15%;
     color: #ffffff;
 }
-h1
+h1 /* Sur toutes les vues */
 {
     text-align: center;
     color: #ffffff;
@@ -127,7 +107,7 @@ h1
     font-size: 5em;
     font-family: 'Redressed', cursive;
 }
-h3
+h3 /* listPostsView.php / postView.php / adminView.php / editionView.php */
 {
     margin-bottom: 0px;
     padding: 10px;
@@ -138,7 +118,7 @@ h3
     font-size: 1.2em;
     border-radius: 5px 5px 0px 0px;
 }
-h4
+h4 /* postView.php / adminView.php */
 {
     margin-bottom: 0px;
     padding: 3px;
@@ -163,7 +143,7 @@ h4
     background-color: #ffffff;
     border-radius: 5px;
 }
-.link-comments a, a#link-delete, a#link-delete-comment
+.link-comments a, a.link-delete, a.link-delete-comment /* listPostsView.php / adminView.php */
 {
     float: right;
     margin-right: 10px;
@@ -173,14 +153,15 @@ h4
     font-weight: bold;
     font-style: italic;
 }
-a#link-edit, a#link-report-remove
+a.link-edit, a.link-report-remove /* adminView.php */
 {
     margin-right: 10px;
     color: #ac399a;
     font-weight: bold;
 }
-/* Mise en forme commentaires */
-#btn_return_listPosts a, #btn_return_admin_page a, #btn_return_connection_page a, a#btn_return_connection_page 
+
+/* PAGE AVEC LES COMMENTAIRES */
+.btn_return_listPosts a, .btn_return_admin_page a, a.btn_return_index /* postView.php / additionView.php / errorView.php */
 {
     margin-left: 20px;
     padding: 5px;
@@ -191,7 +172,7 @@ a#link-edit, a#link-report-remove
     font-weight: bold;
     text-decoration: none;
 }
-#btn_return_listPosts a:hover, #btn_return_admin_page a:hover, #btn_return_connection_page a:hover, a#btn_return_connection_page:hover
+.btn_return_listPosts a:hover, .btn_return_admin_page a:hover, a.btn_return_index:hover
 {
     background-color: #ffffff;
     color: #213800;
@@ -201,7 +182,7 @@ a#link-edit, a#link-report-remove
 {
     margin: 3px;
 }
-#div-comments
+#div-comments /* postView.php */
 {
     margin: 50px 50px 50px 50px;
     padding: 10px;
@@ -213,11 +194,11 @@ h2
 {
     text-align: center;
 }
-.p-not-connected
+.p-not-connected /* postView.php */
 {
     color: red;
 }
-#author, #comment, .input-add-new-post
+#comment, .input-add-new-post /* postView.php / additionView.php */
 {
     padding: 5px;
     margin-bottom: 10px;
@@ -229,7 +210,7 @@ h2
     width: 400px;
     height: 150px;
 }
-#button_add_comment, #button_signup, #button_signin, #button-send-post, #button-edit-post
+#button_add_comment, #button_signup, #button_signin, #button-send-post, #button-edit-post /* postView.php / inscriptionView.php / connectionView.php /additionView.php / editionView.php */
 {
     padding: 5px;
     margin-bottom: 10px;
@@ -245,11 +226,33 @@ h2
     color: #213800;
     font-weight: bold;
 }
-#button-report a
+.button-report a /* postView.php */
 {
     color: blue;
 }
+
 /* PAGE INSCRIPTION et CONNEXION */
+#button_inscription
+{
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#button_inscription:hover
+{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+#button_connexion:hover
+{
+    text-decoration: underline;
+}
+#button_deconnexion:hover, #button_admin:hover
+{
+    text-decoration: underline;
+}
 #form-inscription, #form-connexion
 {
     
@@ -262,10 +265,11 @@ h2
     border-radius: 10px;
     box-shadow: 0px 0px 10px #000000; 
 }
-.input-inscription, .input-connexion, .input-add-new-post, #title-edition, #content-edition
+.input-inscription, .input-connexion, .input-add-new-post, #title-edition, #content-edition /* inscriptionView.php / connectionView.php / additionView.php / editionView.php */
 {
     margin-bottom: 10px;
 }
+
 /* PAGE ADMINISTRATION */
 .fa-plus
 {
@@ -276,7 +280,7 @@ h2
     border-radius: 50px;
     font-size: 1.5em; 
 }
-#form-add-new-post, #form-edition
+#form-add-new-post, #form-edition /* additionView.php / editionView.php */
 {
     margin: 20px 10% 50px 10%;
     padding: 30px;
@@ -285,16 +289,17 @@ h2
     border-radius: 10px;
     box-shadow: 0px 0px 7px #708090;
 }
-#title-add-new-post, #title-edition
+#title-add-new-post, #title-edition /* additionView.php / editionView.php */
 {
     width: 400px;
     height: auto;
 }
-#content-add-new-post, #content-edition
+#content-add-new-post, #content-edition /* additionView.php / editionView.php */
 {
     width: 500px;
     height: 200px;
 }
+
 /* PAGE DES ERREURS */
 #div-error
 {
@@ -310,7 +315,7 @@ h2
     box-shadow: 0px 0px 10px #000000;
 }
 
-/* Footer */
+/* FOOTER */
 footer 
 {
     display: flex;

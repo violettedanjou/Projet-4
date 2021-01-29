@@ -4,7 +4,7 @@
 <?php ob_start(); ?>
 <h1>Billet simple pour l'Alaska</h1>
 
-<p id="btn_return_listPosts">
+<p class="btn_return_listPosts">
 	<?php 	if(isset($_SESSION['admin']) && ($_SESSION['admin'] != 0)) { ?>
 				<a href="index.php?action=afficheAdmin">
 					<i class="fas fa-arrow-left"></i>Retour
@@ -59,7 +59,7 @@
 		
 
 		<?php 	if (isset($_SESSION['id'])) { ?>
-					<div id="button-report">
+					<div class="button-report">
 			    		<a  href="index.php?action=validReport&amp;id=<?= $comment['id'] ?>&amp;post_id=<?= $post['id']?>">Signaler</a>
 			    	</div>
 		<?php 	} ?>

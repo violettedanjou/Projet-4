@@ -40,9 +40,9 @@
 				</form>	
 	<?php 	}
 	
-			else {
-				throw new Exception("Veuillez vous connecter pour ajouter un commentaire.", 1);
-			} 
+			else { ?>
+				<p class="p-not-connected">Veuillez vous connecter pour ajouter un commentaire.</p>
+	<?php	} 
 
 /* Commentaires affichés une fois connecté */
 	while ($comment = $comments->fetch()) 
@@ -62,12 +62,8 @@
 					<div id="button-report">
 			    		<a  href="index.php?action=validReport&amp;id=<?= $comment['id'] ?>&amp;post_id=<?= $post['id']?>">Signaler</a>
 			    	</div>
-		<?php 	} 
-				
-				else {
-					throw new Exception("Veuillez vous connecter pour signaler ce commentaire.", 1);
-				}
-				?>
+		<?php 	} ?>
+					
 		</div>
 	<?php
 	}

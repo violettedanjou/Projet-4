@@ -227,6 +227,10 @@ h2
 {
     text-align: center;
 }
+.p-not-connected
+{
+    color: red;
+}
 #author, #comment, .input-add-new-post
 {
     padding: 5px;

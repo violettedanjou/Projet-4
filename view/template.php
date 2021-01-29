@@ -8,7 +8,7 @@
 
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"> <!-- Icones -->
         <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> 
-  		<script>tinymce.init({selector:'textarea'});</script>
+  		
 
 		<link href="public/commentaires.css" rel="stylesheet" /> 
         <title><?= $title ?></title>
@@ -45,10 +45,11 @@
 			
 	    	<?= $content ?>
     	</div>
-    	
+
 	    <footer>
 	    	<p> Copyright © Violette Danjou - 2021. Tous droits réservés</p>
 	    </footer>
-
+	    
+	    <script>tinymce.init({selector:'textarea'});</script>
     </body>
 </html>

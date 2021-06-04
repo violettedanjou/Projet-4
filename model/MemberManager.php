@@ -32,4 +32,4 @@ class MemberManager extends Manager
         return $req;
 
     }
-}    	
+}

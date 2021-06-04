@@ -130,7 +130,7 @@ try {
                 throw new Exception("Vous ne pouvez pas accéder à cette page.", 1);
             }
         }
-        // Afficher formulaire de modification
+        // Modfier un billet
         elseif ($_GET['action'] == 'afficheEdition') {
             if ((isset($_SESSION['admin'])) AND ($_SESSION['admin'] == 1)) {
                if (isset($_POST['id']) && (isset($_POST['title'])) && (isset($_POST['content']))) {
@@ -141,7 +141,7 @@ try {
                 throw new Exception("Vous ne pouvez pas accéder à cette page.", 1);
             }
         }        
-        // Modfier un billet
+        // Afficher formulaire de modification        
         elseif($_GET['action'] == 'validEdition') {
             if ((isset($_SESSION['admin'])) AND ($_SESSION['admin'] == 1)) {
                if (isset($_GET['id']) && $_GET['id'] > 0) {

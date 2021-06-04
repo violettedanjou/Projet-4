@@ -14,6 +14,7 @@ function insert()
 {
 	$PCManager = new MemberManager();
 	$pseudoExist = $PCManager->verifyPseudo($_POST['pseudo']);
+    
 	$nbrResult = $pseudoExist->rowCount();
 	if ($nbrResult == 0) {
 	    $PCManager = new MemberManager();
@@ -22,7 +23,6 @@ function insert()
 	}
 	else {
 		throw new Exception("Le pseudo est déjà utilisé. Essayez autre chose.", 1);
-        ;
 	}
 }
 
